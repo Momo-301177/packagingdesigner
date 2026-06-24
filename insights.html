@@ -40,7 +40,7 @@ footer{padding:46px 0;border-top:1px solid var(--line);font-size:13px;color:var(
 #toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s}#toTop.show{opacity:1;visibility:visible;transform:none}#toTop svg{width:20px;height:20px}
 </style><link rel="canonical" href="https://packagingdesigner.com.au/insights.html"><meta property="og:type" content="website"><meta property="og:site_name" content="PackagingDesigner.com.au"><meta property="og:locale" content="en_AU"><meta property="og:title" content="Insights &amp; Trends, Australian Packaging Design | PackagingDesigner.com.au"><meta property="og:description" content="Packaging design insights, trends, tips and awards for Australian founders and marketers. Independent, practical reading on branding, compliance and shelf standout."><meta property="og:url" content="https://packagingdesigner.com.au/insights.html"><meta property="og:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Insights &amp; Trends, Australian Packaging Design | PackagingDesigner.com.au"><meta name="twitter:description" content="Packaging design insights, trends, tips and awards for Australian founders and marketers. Independent, practical reading on branding, compliance and shelf standout."><meta name="twitter:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><link rel="icon" href="/assets/seo/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/seo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/assets/seo/apple-touch-icon.png"><meta name="theme-color" content="#2c45c9"></head><body>
 <header><div class="wrap"><a class="wm" href="index.html"><img class="wmi" src="assets/icons/packaging-designer-finder/packaging-designer-finder-logo.svg" alt=""><span class="wmt">Packaging Designer<span class="d"> Finder</span></span></a>
-<nav class="nav-r"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m cur" href="insights.html">Insights</a><a class="m" href="index.html#review">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header>
+<button class="navtoggle" aria-label="Open menu" aria-expanded="false"><span></span></button><nav class="nav-r" id="navmenu"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m cur" href="insights.html">Insights</a><a class="m" href="index.html#review">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header>
 <nav class="subnav" id="subnav" aria-label="Resources"><div class="in"><a href="guides.html">Resources</a><a href="insights.html">Insights</a><a href="packaging-design-cost.html">What it costs</a><a href="brief-builder.html">Brief builder</a><a href="get-matched.html">Get matched</a><a href="packaging-formats-substrates.html">Formats</a><a href="packaging-marks-symbols.html">Marks &amp; symbols</a><a href="compliance-checker.html">Compliance</a><a href="retail-readiness-checklist.html">Retail readiness</a><a href="supplement-packaging-design.html">Supplements</a><a href="supermarket-map.html">Aisle map</a><a href="case-studies.html">Case studies</a><a href="glossary.html">Glossary</a></div></nav>
 
 <div class="wrap"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Insights</div></div>
@@ -100,5 +100,32 @@ ap('all');
 (function(){var sn=document.getElementById('subnav');var last=window.pageYOffset||0,t=false,tt=document.getElementById('toTop');
 function on(){var y=window.pageYOffset||0;if(sn){if(y<last-2&&y>170)sn.classList.add('show');else if(y>last+2||y<=120)sn.classList.remove('show');}if(tt)tt.classList.toggle('show',y>500);last=y<=0?0:y;t=false;}
 window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(on);t=true;}},{passive:true});on();})();
+</script>
+<style id="mnav">
+.navtoggle{display:none;background:transparent;border:0;cursor:pointer;width:42px;height:42px;align-items:center;justify-content:center;margin-left:auto}
+.navtoggle span{position:relative;display:block;width:22px;height:2px;background:var(--ink,#16160f);border-radius:2px}
+.navtoggle span::before,.navtoggle span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--ink,#16160f);border-radius:2px;transition:transform .2s,top .2s}
+.navtoggle span::before{top:-7px}.navtoggle span::after{top:7px}
+.navtoggle.open span{background:transparent}
+.navtoggle.open span::before{top:0;transform:rotate(45deg)}
+.navtoggle.open span::after{top:0;transform:rotate(-45deg)}
+@media(max-width:920px){
+ header .wrap{position:relative}
+ .navtoggle{display:inline-flex}
+ .nav-r{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bone,#f3f2ee);border:1px solid var(--line,#e0ded6);border-top:0;padding:4px 22px 18px;box-shadow:0 18px 34px -22px rgba(20,20,15,.55);display:none;z-index:60}
+ .nav-r.open{display:flex}
+ .nav-r a.m{display:block!important;font-size:16px;padding:15px 2px;border-bottom:1px solid var(--line,#e0ded6);margin:0;color:var(--ink2,#3a3a32)}
+ .nav-r .cta{display:block;text-align:center;margin:14px 0 0;padding:14px 18px;font-size:15px}
+ .wm{font-size:18px}.wm .wmt{white-space:nowrap}
+}
+@media(max-width:360px){.wm{font-size:16px}}
+</style>
+<script id="mnavjs">
+(function(){var b=document.querySelector('.navtoggle'),n=document.getElementById('navmenu');if(!b||!n)return;
+function close(){n.classList.remove('open');b.classList.remove('open');b.setAttribute('aria-expanded','false');}
+b.addEventListener('click',function(e){e.stopPropagation();var o=!n.classList.contains('open');n.classList.toggle('open',o);b.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');});
+n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)&&!b.contains(e.target))close();});
+})();
 </script>
 </body></html>
