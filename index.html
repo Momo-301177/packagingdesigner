@@ -102,7 +102,7 @@ p{margin:0 0 20px;color:var(--ink2)}
 @media(max-width:760px){.rail{grid-template-columns:repeat(2,1fr)}}
 .rcell{padding:26px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);transition:.3s;display:flex;flex-direction:column;gap:14px}
 .rcell:hover{background:var(--accent)}.rcell:hover .rn{color:#fff}.rcell:hover .ic{color:#fff}
-.rcell .ic{width:56px;height:56px;color:var(--ink)}.rcell .ic svg{width:100%;height:100%}.rcell .ic img{width:100%;height:100%;object-fit:contain;object-position:left center}.rcell:hover .ic img{filter:brightness(0) invert(1)}
+.rcell .ic{width:56px;height:56px;color:var(--ink)}.rcell .ic svg{width:100%;height:100%}.rcell .ic img{width:100%;height:100%;object-fit:contain;object-position:center center}.rcell:hover .ic img{filter:brightness(0) invert(1)}
 .rcell .rn{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:-.01em}
 /* editorial rows */
 .erow{display:grid;grid-template-columns:90px 1fr 1.1fr;gap:40px;padding:38px 24px;border-top:1px solid var(--line);align-items:baseline;border-radius:3px;transition:background .4s cubic-bezier(.2,.7,.2,1),transform .4s cubic-bezier(.2,.7,.2,1),color .25s}.erow:hover{background:var(--accent);transform:scale(1.012)}.erow:hover .no{color:#fff}.erow:hover h3{color:#fff}.erow:hover p{color:rgba(255,255,255,.9)}
@@ -429,6 +429,7 @@ function setPart(i){
   document.getElementById('po').textContent=PART[i].o;
 }
 document.querySelectorAll('.pbtn').forEach(b=>b.addEventListener('click',()=>setPart(+b.dataset.i)));
+(function(){var partner=document.querySelector('.partner');if(!partner)return;var pac=document.createElement('div');pac.className='paccord';PART.forEach(function(p,i){var d=document.createElement('details');if(i===1)d.open=true;d.innerHTML='<summary><span class="role">'+p.r+'</span>'+p.n+'</summary><div class="body"><p>'+p.t+'</p><div class="pm"><div class="k">Best when</div><div class="v">'+p.w+'</div></div><div class="pm"><div class="k">Typical outcome</div><div class="v">'+p.o+'</div></div></div>';pac.appendChild(d);});partner.insertAdjacentElement('afterend',pac);})();
 
 /* ---- directory teaser (Morice present, not first) ---- */
 /* NOTE: review figures below are ILLUSTRATIVE placeholders so the layout reads true.
@@ -566,16 +567,38 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
 </script>
 <style id="mhome">
 @media(max-width:760px){
- .hero{min-height:auto;padding:30px 0 44px}
+ .hero{min-height:auto;padding:30px 0 44px;overflow:hidden}
  .stage{display:none}
  .scrollnote{display:none}
- section{padding:60px 0}
+ section{padding:60px 0;overflow:hidden}
  .stats{padding:58px 0}
  .headart{align-items:center!important;width:100%}
  .headart img{width:210px!important;margin:0 auto}
  .premgrid{justify-content:center}
  .premart{margin:10px auto 0}
  .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}
+ .sform{display:block!important;width:122px!important;opacity:.55;z-index:1;pointer-events:none!important}
+ .partner{display:none}
+ .paccord{display:block}
+}
+.paccord{display:none;border-top:1px solid var(--line);margin-top:4px}
+.paccord details{border-bottom:1px solid var(--line)}
+.paccord summary{list-style:none;cursor:pointer;padding:18px 32px 18px 0;position:relative;font-family:var(--display);font-weight:600;font-size:19px;color:var(--ink)}
+.paccord summary::-webkit-details-marker{display:none}
+.paccord summary .role{display:block;font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.paccord summary:after{content:"+";position:absolute;right:2px;top:17px;color:var(--mut);font-size:24px;line-height:1}
+.paccord details[open] summary:after{content:"\2013"}
+.paccord .body{padding:0 2px 20px}
+.paccord .body p{margin:0 0 14px;color:var(--ink2);font-size:15px;line-height:1.6}
+.paccord .pm{margin-top:12px}
+.paccord .pm .k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin-bottom:3px}
+.paccord .pm .v{font-weight:600;color:var(--ink);font-size:15px}
+</style>
+<style id="mcta">
+@media(max-width:560px){
+ .cta .btn,.dark .btn{display:block;width:100%;max-width:340px;margin:10px auto 0;text-align:center;box-sizing:border-box}
+ .acts{flex-direction:column;align-items:stretch}
+ .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
 }
 </style>
 </body></html>

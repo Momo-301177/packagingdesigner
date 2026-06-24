@@ -28,7 +28,7 @@
 .hero .herotext h1{max-width:15ch;font-size:clamp(32px,4.3vw,58px)}
 .hero .heroart{line-height:0}
 .hero .heroart img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center}
-@media(max-width:860px){.hero .heroart img{max-height:230px;object-position:left}}
+@media(max-width:860px){.hero .heroart img{max-height:230px;object-position:center}}
 </style>
 <style>
 .crumb{padding:30px 0 0;font-size:13px;color:var(--mut)}.crumb a{color:var(--mut)}.crumb a:hover{color:var(--ink)}
@@ -199,17 +199,18 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
     });}
   });
   if(touch){
+    function closeAll(){document.querySelectorAll('.pop.tap').forEach(function(p){p.classList.remove('tap');if(p._home){p._home.appendChild(p);}});bd.classList.remove('show');}
     cards.forEach(function(c){
       var pop=c.querySelector('.pop');
       c.addEventListener('click',function(e){
         if(e.target.closest('.plink'))return;
         e.preventDefault();
         var open=pop.classList.contains('tap');
-        document.querySelectorAll('.pop.tap').forEach(function(p){p.classList.remove('tap');});
-        if(!open){pop.classList.add('tap');bd.classList.add('show');}else{bd.classList.remove('show');}
+        closeAll();
+        if(!open){pop._home=c;document.body.appendChild(pop);pop.classList.add('tap');bd.classList.add('show');}
       });
     });
-    bd.addEventListener('click',function(){document.querySelectorAll('.pop.tap').forEach(function(p){p.classList.remove('tap');});bd.classList.remove('show');});
+    bd.addEventListener('click',closeAll);
   }
 })();
 </script>
@@ -242,15 +243,26 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
 </script>
 <style id="mcards">
 @media(max-width:680px){
- #grid.grid{grid-template-columns:1fr;gap:0;padding-top:14px;border-top:1px solid var(--line)}
- #grid .card{position:relative;min-height:0;border:0;border-bottom:1px solid var(--line);background:transparent!important;padding:17px 30px 17px 2px;transform:none!important}
- #grid .card:hover{transform:none!important}
- #grid .card:hover .nm,#grid .card:hover .loc,#grid .card:hover .rev,#grid .card:hover .rev b{color:var(--ink)!important}
- #grid .card .nm{font-size:19px;line-height:1.15}
- #grid .card .loc{margin:5px 0 0}
- #grid .card .tgs{display:flex!important;flex-wrap:wrap;gap:6px;margin:9px 0 0;padding:0}
- #grid .card .tg{margin:0}
- #grid .card:after{content:"\203A";position:absolute;right:4px;top:50%;transform:translateY(-50%);color:var(--mut);font-size:26px;line-height:1}
+ #grid.grid{grid-template-columns:1fr 1fr;gap:10px;padding-top:18px}
+ #grid .card{min-height:104px;padding:14px 13px;border:1px solid var(--line);background:var(--paper)!important;justify-content:flex-start;transform:none!important}
+ #grid .card:hover{transform:none!important;border-color:var(--line)}
+ #grid .card:hover .nm,#grid .card:hover .loc{color:var(--ink)!important}
+ #grid .card .nm{font-size:16px;line-height:1.18}
+ #grid .card .loc{font-size:12px;margin:6px 0 0}
+ #grid .card .sp,#grid .card .cl,#grid .card .tgs,#grid .card .rev{display:none!important}
+ #grid .card:after{content:none!important}
+}
+@media(max-width:380px){#grid .card .nm{font-size:15px}}
+@media(hover:none){
+ .pop.tap{position:fixed!important;left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;transform:translate(-50%,-50%)!important;width:340px!important;max-width:88vw!important;max-height:82vh!important;overflow:auto!important;z-index:80!important}
+ .popbd.show{z-index:75!important}
+}
+</style>
+<style id="mcta">
+@media(max-width:560px){
+ .cta .btn,.dark .btn{display:block;width:100%;max-width:340px;margin:10px auto 0;text-align:center;box-sizing:border-box}
+ .acts{flex-direction:column;align-items:stretch}
+ .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
 }
 </style>
 </body></html>

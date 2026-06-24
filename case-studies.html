@@ -58,7 +58,7 @@ p{margin:0 0 16px;color:var(--ink2)}
 .mc{border:1px solid var(--line);background:#fff;border-radius:12px;padding:26px;transition:.2s}
 .mc:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 16px 34px -22px rgba(44,69,201,.5)}
 .mc{display:flex;flex-direction:column}
-.mc .ic{display:block;width:60px;height:60px;color:var(--accent);margin-bottom:16px}.mc .ic svg{width:100%;height:100%;display:block}.mc .ic img{width:60px;height:60px;object-fit:contain;object-position:left center;display:block}
+.mc .ic{display:block;width:60px;height:60px;color:var(--accent);margin-bottom:16px}.mc .ic svg{width:100%;height:100%;display:block}.mc .ic img{width:60px;height:60px;object-fit:contain;object-position:center center;display:block}
 .mc h3{font-family:var(--display);font-weight:700;font-size:17px;margin:0 0 6px}
 .mc p{font-size:13.5px;margin:0;color:var(--ink2)}
 .cta{background:var(--ink);color:var(--bone);text-align:center;padding:100px 0}.cta h2{color:#fff;margin:0 auto 22px;max-width:18ch}.cta h2 .it{color:#5b86ff}.cta p{color:rgba(243,242,238,.72);max-width:46ch;margin:0 auto 26px}
@@ -202,4 +202,11 @@ n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);})
 document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)&&!b.contains(e.target))close();});
 })();
 </script>
+<style id="mcta">
+@media(max-width:560px){
+ .cta .btn,.dark .btn{display:block;width:100%;max-width:340px;margin:10px auto 0;text-align:center;box-sizing:border-box}
+ .acts{flex-direction:column;align-items:stretch}
+ .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
+}
+</style>
 </body></html>
