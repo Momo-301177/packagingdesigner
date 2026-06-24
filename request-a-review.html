@@ -94,10 +94,10 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
       <div><label>What would you like from the review? <span class="req">*</span></label><textarea id="f_msg" name="message" required placeholder="Tell us about the product, where it sells, and what you are unsure about."></textarea></div>
       <div class="sub">
         <button class="send" type="submit">Send my request</button>
-        <span class="note">This opens your email app with the details ready to send to Morice &amp; Co.</span>
+        <span class="note">We usually reply within one business day, to the email you enter above.</span>
       </div>
     </form>
-    <div class="ok" id="rvOk"><strong>Thanks, your email is ready.</strong><br>Your email app should have opened with your request to Morice &amp; Co. If it did not, email <a href="mailto:morice@y7mail.com" style="color:var(--accent);font-weight:600">morice@y7mail.com</a> directly.</div>
+    <div class="ok" id="rvOk"><strong>Thanks, your request is on its way.</strong><br>We have your details and will be in touch shortly at the email you provided. If anything is urgent, email <a href="mailto:hello@packagingdesigner.com.au" style="color:var(--accent);font-weight:600">hello@packagingdesigner.com.au</a> directly.</div>
   </div>
   <aside class="aside">
     <div class="label">What you get</div>
@@ -113,22 +113,47 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 <footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="index.html">Home</a></div></footer>
 
 <script>
-document.getElementById('rvForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  var g=function(id){return (document.getElementById(id).value||'').trim();};
-  var name=g('f_name'),email=g('f_email'),co=g('f_co'),web=g('f_web'),cat=g('f_cat'),stage=g('f_stage'),link=g('f_link'),msg=g('f_msg');
-  var subject='Packaging Performance Review request, '+(co||name);
-  var body=
-    'Name: '+name+'\n'+
-    'Email: '+email+'\n'+
-    'Company / brand: '+co+'\n'+
-    'Website: '+(web||'-')+'\n'+
-    'Category: '+(cat||'-')+'\n'+
-    'Stage: '+(stage||'-')+'\n'+
-    'Current packaging: '+(link||'-')+'\n\n'+
-    'What they want from the review:\n'+msg+'\n';
-  window.location.href='mailto:morice@y7mail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-  document.getElementById('rvOk').classList.add('show');
-});
+/* Form delivery via Web3Forms (free, no account needed).
+   1. Set up forwarding so hello@packagingdesigner.com.au reaches your inbox.
+   2. Go to https://web3forms.com, enter hello@packagingdesigner.com.au, and they email you an Access Key.
+   3. Paste that key between the quotes below (replace YOUR-WEB3FORMS-ACCESS-KEY) and re-deploy.
+   Until a real key is set, the form falls back to opening the visitor's email app, so nothing is ever lost. */
+var W3F_KEY="8860987f-547f-4e46-9c05-ae1aaee6fb4b";
+(function(){
+  var form=document.getElementById('rvForm');
+  var btn=form.querySelector('button.send');
+  var ok=document.getElementById('rvOk');
+  function g(id){return (document.getElementById(id).value||'').trim();}
+  function mailtoFallback(){
+    var subject='Packaging Performance Review request, '+(g('f_co')||g('f_name'));
+    var body='Name: '+g('f_name')+'\nEmail: '+g('f_email')+'\nCompany / brand: '+g('f_co')+
+      '\nWebsite: '+(g('f_web')||'-')+'\nCategory: '+(g('f_cat')||'-')+'\nStage: '+(g('f_stage')||'-')+
+      '\nCurrent packaging: '+(g('f_link')||'-')+'\n\nWhat they want from the review:\n'+g('f_msg')+'\n';
+    window.location.href='mailto:hello@packagingdesigner.com.au?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    ok.classList.add('show');
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!W3F_KEY||W3F_KEY.indexOf('YOUR-')===0){mailtoFallback();return;}
+    var payload={
+      access_key:W3F_KEY,
+      subject:'Packaging Performance Review request, '+(g('f_co')||g('f_name')),
+      from_name:'PackagingDesigner.com.au',
+      name:g('f_name'), email:g('f_email'), replyto:g('f_email'),
+      company:g('f_co'), website:g('f_web'), category:g('f_cat'),
+      stage:g('f_stage'), current_packaging:g('f_link'), message:g('f_msg')
+    };
+    var orig=btn.textContent; btn.disabled=true; btn.textContent='Sending...';
+    fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d&&d.success){form.style.display='none'; ok.classList.add('show');}
+      else{mailtoFallback();}
+    }).catch(function(){mailtoFallback();})
+    .then(function(){btn.disabled=false; btn.textContent=orig;});
+  });
+})();
 </script>
 <style>.nav-r a.m.cur{color:var(--accent)!important;font-weight:600}</style><script id="navcur">(function(){var here=(location.pathname.split("/").pop()||"index.html");var RES=["guides.html","packaging-design-cost.html","brief-builder.html","get-matched.html","retail-readiness-checklist.html","glossary.html","case-studies.html","supplement-packaging-design.html","compliance-checker.html","supermarket-map.html","packaging-marks-symbols.html"];var studio=location.pathname.indexOf("/studios/")>-1;document.querySelectorAll(".nav-r a.m").forEach(function(a){var hn=(a.getAttribute("href")||"").split("/").pop();var on=false;if(hn===here)on=true;if((here==="find-a-packaging-designer.html"||studio)&&hn==="find-a-packaging-designer.html")on=true;if(RES.indexOf(here)>-1&&hn==="guides.html")on=true;if(on)a.classList.add("cur");});})();</script></body></html>
