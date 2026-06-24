@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Insights &amp; Trends, Australian Packaging Design | PackagingDesigner.com.au</title>
+<meta name="description" content="Packaging design insights, trends, tips and awards for Australian founders and marketers. Independent, practical reading on branding, compliance and shelf standout.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#f3f2ee;--paper:#fafaf7;--ink:#16160f;--ink2:#3a3a32;--mut:#8c897e;--line:#e0ded6;--accent:#2c45c9;--display:"Sen",sans-serif;--sans:"Sen",-apple-system,Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;font-family:var(--sans);background:var(--bone);color:var(--ink);font-size:17px;line-height:1.6}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+a{color:inherit;text-decoration:none}.it{color:var(--accent);font-weight:inherit}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+header{position:sticky;top:0;z-index:40;background:rgba(243,242,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.wm{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:800;font-size:22px}.wm .wmi{height:26px;width:auto;flex:none;display:block}.wm .d{color:var(--accent)}
+.nav-r a{font-size:14px;margin-left:24px;color:var(--ink2)}.nav-r a.m.cur{color:var(--accent)!important;font-weight:600}
+.nav-r .cta{font-size:14px;font-weight:600;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:10px 18px;border-radius:1px;transition:.2s}.nav-r .cta:hover{background:var(--ink);color:var(--bone)}
+.crumb{padding:30px 0 0;font-size:13px;color:var(--mut)}.crumb a{color:var(--mut)}
+.hero{padding:26px 0 30px}.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,60px);line-height:1.03;letter-spacing:-.025em;margin:14px 0 16px;max-width:16ch}
+.hero p{font-size:clamp(17px,1.7vw,20px);color:var(--ink2);max-width:60ch;margin:0}
+.filters{position:sticky;top:74px;z-index:20;background:var(--bone);border-bottom:1px solid var(--line);padding:14px 0}
+.filters .in{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fb{font-size:13px;border:1px solid var(--line);background:transparent;padding:7px 14px;border-radius:99px;cursor:pointer;color:var(--ink2);transition:.18s;font-family:var(--sans)}
+.fb:hover{border-color:var(--ink)}.fb.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cnt{font-size:12.5px;color:var(--mut);margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:38px 0 90px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.grid{grid-template-columns:1fr}}
+.acard{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:26px 24px 22px;min-height:300px;transition:.2s}
+.acard:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 40px -26px rgba(20,20,15,.4)}
+.ac-cat{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:20px}
+.ac-t{font-family:var(--display);font-weight:700;font-size:24px;letter-spacing:-.015em;line-height:1.12;margin:0 0 12px}
+.ac-d{font-size:14.5px;color:var(--ink2);margin:0 0 18px}
+.ac-go{margin-top:auto;font-size:14px;font-weight:600;color:var(--ink)}
+.acard .soon{margin-top:auto;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--mut)}
+.hide{display:none!important}
+footer{padding:46px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}footer a{color:var(--ink2)}footer a:hover{color:var(--ink)}
+.subnav{position:fixed;left:0;right:0;top:74px;z-index:25;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-170%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 10px 22px -16px rgba(20,20,15,.4)}
+.subnav.show{transform:translateY(0)}
+.subnav .in{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;gap:4px;overflow-x:auto;height:46px;align-items:center;scrollbar-width:none}.subnav .in::-webkit-scrollbar{display:none}
+.subnav a{flex:none;font-size:13px;font-weight:500;color:var(--ink2);padding:6px 13px;border-radius:99px;white-space:nowrap}.subnav a:hover{background:var(--bone);color:var(--ink)}.subnav a.cur{background:var(--accent);color:#fff}
+#toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s}#toTop.show{opacity:1;visibility:visible;transform:none}#toTop svg{width:20px;height:20px}
+</style><link rel="canonical" href="https://packagingdesigner.com.au/insights.html"><meta property="og:type" content="website"><meta property="og:site_name" content="PackagingDesigner.com.au"><meta property="og:locale" content="en_AU"><meta property="og:title" content="Insights &amp; Trends, Australian Packaging Design | PackagingDesigner.com.au"><meta property="og:description" content="Packaging design insights, trends, tips and awards for Australian founders and marketers. Independent, practical reading on branding, compliance and shelf standout."><meta property="og:url" content="https://packagingdesigner.com.au/insights.html"><meta property="og:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Insights &amp; Trends, Australian Packaging Design | PackagingDesigner.com.au"><meta name="twitter:description" content="Packaging design insights, trends, tips and awards for Australian founders and marketers. Independent, practical reading on branding, compliance and shelf standout."><meta name="twitter:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><link rel="icon" href="/assets/seo/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/seo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/assets/seo/apple-touch-icon.png"><meta name="theme-color" content="#2c45c9"></head><body>
+<header><div class="wrap"><a class="wm" href="index.html"><img class="wmi" src="assets/icons/packaging-designer-finder/packaging-designer-finder-logo.svg" alt=""><span class="wmt">Packaging Designer<span class="d"> Finder</span></span></a>
+<nav class="nav-r"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m cur" href="insights.html">Insights</a><a class="m" href="index.html#review">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header>
+<nav class="subnav" id="subnav" aria-label="Resources"><div class="in"><a href="guides.html">Resources</a><a href="insights.html">Insights</a><a href="packaging-design-cost.html">What it costs</a><a href="brief-builder.html">Brief builder</a><a href="get-matched.html">Get matched</a><a href="packaging-formats-substrates.html">Formats</a><a href="packaging-marks-symbols.html">Marks &amp; symbols</a><a href="compliance-checker.html">Compliance</a><a href="retail-readiness-checklist.html">Retail readiness</a><a href="supplement-packaging-design.html">Supplements</a><a href="supermarket-map.html">Aisle map</a><a href="case-studies.html">Case studies</a><a href="glossary.html">Glossary</a></div></nav>
+
+<div class="wrap"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Insights</div></div>
+<section class="hero"><div class="wrap">
+<div class="label">Insights &amp; trends</div>
+<h1>Packaging ideas <span class="it">worth your time.</span></h1>
+<p>Independent, practical reading for founders and marketers: trends, tips, compliance, awards and the thinking behind packs that sell. No fluff, just what helps you make a better call.</p>
+</div></section>
+
+<div class="filters"><div class="wrap"><div class="in" id="fbar">
+<button class="fb on" data-c="all">All</button>
+<button class="fb" data-c="Trends">Trends</button>
+<button class="fb" data-c="Packaging">Packaging</button>
+<button class="fb" data-c="Branding">Branding</button>
+<button class="fb" data-c="Compliance">Compliance</button>
+<button class="fb" data-c="Strategy">Strategy</button>
+<button class="fb" data-c="Tips">Tips</button>
+<button class="fb" data-c="Awards">Awards</button>
+<span class="cnt" id="cnt"></span>
+</div></div></div>
+
+<div class="wrap"><div class="grid" id="grid">
+
+<a class="acard" data-cat="Trends" href="insights/packaging-trends-2026.html"><div class="ac-cat">Trends</div><h3 class="ac-t">Australian packaging trends for 2026</h3><p class="ac-d">Where local packs are heading: restraint, real sustainability, tactile finishes and the smart use of AI in the studio.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Packaging" href="insights/sustainable-packaging-australia.html"><div class="ac-cat">Packaging</div><h3 class="ac-t">Sustainable packaging in Australia: where to start</h3><p class="ac-d">APCO, the ARL and 2025 targets explained in plain English, plus practical first moves that do not blow the budget.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Awards" href="insights/australian-packaging-awards.html"><div class="ac-cat">Awards</div><h3 class="ac-t">The packaging awards worth entering in Australia</h3><p class="ac-d">A guide to the local and global programs that actually carry weight, and what judges tend to reward.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Strategy" href="packaging-design-cost.html"><div class="ac-cat">Strategy</div><h3 class="ac-t">What packaging design costs in Australia</h3><p class="ac-d">Real market ranges by scope, what drives the number, and an estimator to help you budget before you brief.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Compliance" href="packaging-marks-symbols.html"><div class="ac-cat">Compliance</div><h3 class="ac-t">Every mark that belongs on an Australian pack</h3><p class="ac-d">Barcodes, recycling labels, country-of-origin and the mandatory details, with an interactive checklist by category.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Tips" href="brief-builder.html"><div class="ac-cat">Tips</div><h3 class="ac-t">How to brief a packaging designer</h3><p class="ac-d">The questions a good brief answers, built into a step-by-step tool that produces an agency-ready document.</p><span class="ac-go">Open the tool &rarr;</span></a>
+
+<a class="acard" data-cat="Packaging" href="packaging-formats-substrates.html"><div class="ac-cat">Packaging</div><h3 class="ac-t">Choosing the right format and substrate</h3><p class="ac-d">Pouch, tin, jar, carton or bottle: how the format shapes cost, sustainability and shelf presence.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Branding" href="supplement-packaging-design.html"><div class="ac-cat">Branding</div><h3 class="ac-t">Standing out in supplements, a regulated category</h3><p class="ac-d">How the best supplement brands build trust and shelf cut-through while keeping the claims compliant.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Tips" href="retail-readiness-checklist.html"><div class="ac-cat">Tips</div><h3 class="ac-t">Retail readiness: tick it off before you launch</h3><p class="ac-d">The 17 things to confirm before artwork goes to print, from dielines to mandatory information.</p><span class="ac-go">Open the checklist &rarr;</span></a>
+
+<a class="acard" data-cat="Trends" href="supermarket-map.html"><div class="ac-cat">Trends</div><h3 class="ac-t">Reading the supermarket shelf, aisle by aisle</h3><p class="ac-d">What wins in each aisle: the design codes buyers expect and the compliance that shifts by category.</p><span class="ac-go">Explore &rarr;</span></a>
+
+<a class="acard" data-cat="Strategy" href="case-studies.html"><div class="ac-cat">Strategy</div><h3 class="ac-t">Packaging that changed the numbers</h3><p class="ac-d">How a redesign is read every time: the problem, the thinking, the design and the commercial result.</p><span class="ac-go">Read &rarr;</span></a>
+
+<a class="acard" data-cat="Branding" href="glossary.html"><div class="ac-cat">Branding</div><h3 class="ac-t">Packaging terms, explained in plain English</h3><p class="ac-d">A searchable glossary of the language you will hear from designers, printers and suppliers.</p><span class="ac-go">Read &rarr;</span></a>
+
+</div></div>
+
+<footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="index.html">Home</a></div></footer>
+<button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<script>
+var cards=[].slice.call(document.querySelectorAll('#grid .acard')),fbar=document.getElementById('fbar');
+function ap(c){var n=0;cards.forEach(function(x){var ok=(c==='all'||x.dataset.cat===c);x.classList.toggle('hide',!ok);if(ok)n++;});document.getElementById('cnt').textContent=n+' article'+(n===1?'':'s');}
+fbar.addEventListener('click',function(e){var b=e.target.closest('.fb');if(!b)return;fbar.querySelectorAll('.fb').forEach(function(x){x.classList.remove('on');});b.classList.add('on');ap(b.dataset.c);});
+ap('all');
+(function(){var sn=document.getElementById('subnav');var last=window.pageYOffset||0,t=false,tt=document.getElementById('toTop');
+function on(){var y=window.pageYOffset||0;if(sn){if(y<last-2&&y>170)sn.classList.add('show');else if(y>last+2||y<=120)sn.classList.remove('show');}if(tt)tt.classList.toggle('show',y>500);last=y<=0?0:y;t=false;}
+window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(on);t=true;}},{passive:true});on();})();
+</script>
+</body></html>

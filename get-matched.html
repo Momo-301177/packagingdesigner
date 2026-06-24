@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- Tool page system: split form + live preview. Sen, blueprint blue, no em dashes. -->
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Get Matched to a Packaging Designer | PackagingDesigner.com.au</title>
+<meta name="description" content="Answer three questions and get matched to Australian packaging studios that fit your category, location and stage.">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Bitcount+Prop+Single&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#f3f2ee;--paper:#fafaf7;--ink:#16160f;--ink2:#3a3a32;--mut:#8c897e;--line:#e0ded6;--accent:#2c45c9;--display:"Sen",sans-serif;--sans:"Sen",-apple-system,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);background:var(--bone);color:var(--ink);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}@media(max-width:680px){.wrap{padding:0 22px}}
+a{color:inherit;text-decoration:none}.it{color:var(--accent)}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+header{position:sticky;top:0;z-index:40;background:rgba(243,242,238,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.wm{font-family:var(--display);font-weight:800;font-size:22px}.wm .d{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:22px}.nav-r a.m{font-size:14px;color:var(--ink2)}.nav-r a.m:hover{color:var(--ink)}
+.nav-r .cta{font-size:14px;font-weight:600;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:10px 18px;border-radius:1px;transition:.2s}.nav-r .cta:hover{background:var(--ink);color:var(--bone)}
+@media(max-width:900px){.nav-r a.m{display:none}}
+.crumb{padding:26px 0 0;font-size:13px;color:var(--mut)}.crumb a{color:var(--mut)}
+.hero{padding:34px 0 30px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,82px);letter-spacing:-.03em;line-height:.98;margin:14px 0 18px;max-width:16ch}.it{color:var(--accent)}
+.stand{font-size:clamp(17px,1.7vw,21px);color:var(--ink2);max-width:52ch;margin:0}
+.toolgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:30px 0 90px;align-items:start}@media(max-width:860px){.toolgrid{grid-template-columns:1fr;gap:22px}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:34px}
+.card .kk{font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:20px}
+.field{margin:0 0 20px}.field label{display:block;font-size:13px;font-weight:600;letter-spacing:.03em;margin-bottom:8px}
+.sel{position:relative}
+.sel select{appearance:none;width:100%;font-family:var(--sans);font-size:16px;font-weight:600;padding:15px 44px 15px 16px;border:1.5px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);cursor:pointer;transition:border-color .2s}
+.sel select:focus{outline:none;border-color:var(--accent)}
+.sel:after{content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+/* preview */
+.prev{position:sticky;top:96px;background:var(--ink);color:var(--bone);border-radius:6px;padding:36px;overflow:hidden}
+.prev .kk{color:#9a978b}
+.prev h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;line-height:1.08;margin:0 0 14px;color:#fff;min-height:2.1em}
+.prev h2 b{color:#5b86ff;font-weight:700}
+.prev p{color:rgba(243,242,238,.74);font-size:15.5px;margin:0 0 26px}
+.steps{list-style:none;padding:0;margin:0 0 28px;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:14px 0 14px 42px;border-top:1px solid rgba(243,242,238,.16);font-size:15px;color:rgba(243,242,238,.9)}
+.steps li:before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:12px;color:#5b86ff;font-weight:700;font-size:22px;font-family:"Bitcount Prop Single",var(--display)}
+.pbtns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:14px;padding:13px 22px;border-radius:2px;cursor:pointer;border:0}
+.prev .btn{background:var(--bone);color:var(--ink)}.prev .btn:hover{background:#fff}
+.prev .btn.gh{background:transparent;border:1px solid rgba(243,242,238,.4);color:var(--bone)}
+.cta{background:var(--paper);border-top:1px solid var(--line);text-align:center;padding:86px 0}
+.cta h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,52px);letter-spacing:-.03em;margin:12px auto 14px;max-width:18ch}.cta h2 .it{color:var(--accent)}
+.cta p{color:var(--ink2);max-width:46ch;margin:0 auto 26px}
+.cta .btn{background:var(--ink);color:var(--bone)}.cta .btn:hover{background:var(--accent)}
+.cta .btn.gh{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+footer{padding:50px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}footer a{color:var(--ink2)}footer a:hover{color:var(--ink)}
+</style><style>
+.hero .herogrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .herogrid{grid-template-columns:1fr;gap:24px}}
+.hero .herotext h1{max-width:15ch;font-size:clamp(32px,4.3vw,58px)}
+.hero .heroart{line-height:0}
+.hero .heroart img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center}
+@media(max-width:860px){.hero .heroart img{max-height:230px;object-position:left}}
+</style>
+<style>.wm{display:inline-flex;align-items:center;gap:9px}.wm .wmi{height:26px;width:auto;flex:none;display:block}</style><link rel="canonical" href="https://packagingdesigner.com.au/get-matched.html"><meta property="og:type" content="website"><meta property="og:site_name" content="PackagingDesigner.com.au"><meta property="og:locale" content="en_AU"><meta property="og:title" content="Get Matched to a Packaging Designer | PackagingDesigner.com.au"><meta property="og:description" content="Answer three questions and get matched to Australian packaging studios that fit your category, location and stage."><meta property="og:url" content="https://packagingdesigner.com.au/get-matched.html"><meta property="og:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Get Matched to a Packaging Designer | PackagingDesigner.com.au"><meta name="twitter:description" content="Answer three questions and get matched to Australian packaging studios that fit your category, location and stage."><meta name="twitter:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><link rel="icon" href="/assets/seo/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/seo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/assets/seo/apple-touch-icon.png"><meta name="theme-color" content="#2c45c9"></head><body>
+<header><div class="wrap"><a class="wm" href="index.html"><img class="wmi" src="assets/icons/packaging-designer-finder/packaging-designer-finder-logo.svg" alt=""><span class="wmt">Packaging Designer<span class="d"> Finder</span></span></a>
+<nav class="nav-r"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m" href="insights.html">Insights</a><a class="m" href="index.html#review">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header><style>
+.subnav{position:fixed;left:0;right:0;top:74px;z-index:25;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-170%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 10px 22px -16px rgba(20,20,15,.4)}
+.subnav.show{transform:translateY(0)}
+.subnav .in{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;gap:4px;overflow-x:auto;height:46px;align-items:center;scrollbar-width:none}
+.subnav .in::-webkit-scrollbar{display:none}
+.subnav a{flex:none;font-size:13px;font-weight:500;color:var(--ink2);padding:6px 13px;border-radius:99px;white-space:nowrap;transition:.15s;margin:0}
+.subnav a:hover{background:var(--bone);color:var(--ink)}
+.subnav a.cur{background:var(--accent);color:#fff}
+@media(max-width:680px){.subnav .in{padding:0 16px}}
+</style>
+<nav class="subnav" id="subnav" aria-label="Resources"><div class="in"><a href="guides.html">Resources</a><a href="insights.html">Insights</a><a href="packaging-design-cost.html">What it costs</a><a href="brief-builder.html">Brief builder</a><a href="get-matched.html">Get matched</a><a href="packaging-formats-substrates.html">Formats</a><a href="packaging-marks-symbols.html">Marks &amp; symbols</a><a href="compliance-checker.html">Compliance</a><a href="retail-readiness-checklist.html">Retail readiness</a><a href="supplement-packaging-design.html">Supplements</a><a href="supermarket-map.html">Aisle map</a><a href="case-studies.html">Case studies</a><a href="glossary.html">Glossary</a></div></nav>
+<script>
+(function(){var sn=document.getElementById('subnav');if(!sn)return;var last=window.pageYOffset||0,tick=false;
+var here=(location.pathname.split('/').pop()||'');
+sn.querySelectorAll('a').forEach(function(a){if(a.getAttribute('href')===here)a.classList.add('cur');});
+function on(){var y=window.pageYOffset||0;if(y<last-2&&y>170){sn.classList.add('show');}else if(y>last+2||y<=120){sn.classList.remove('show');}last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});})();
+</script>
+
+<div class="wrap"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="guides.html">Resources</a> &nbsp;/&nbsp; Get matched</div></div>
+
+<section class="hero"><div class="wrap"><div class="herogrid"><div class="herotext">
+  <div class="label">Matching tool</div>
+  <h1>Get matched to the right <span class="it">studios.</span></h1>
+  <p class="stand">Three quick questions. We point you to the Australian studios that fit your category, city and stage, with the option of an expert read first.</p>
+</div><div class="heroart"><img src="assets/icons/resources/get-matched.svg" alt="" loading="lazy"></div></div></div></section>
+
+<div class="wrap"><div class="toolgrid">
+  <div class="card">
+    <div class="kk">Tell us about your project</div>
+    <div class="field"><label>Your category</label><div class="sel"><select id="m_cat" oninput="upd()">
+      <option value="Supplements">Supplements</option><option value="Food">Food</option><option value="Beverage">Beverage</option><option value="Alcohol &amp; spirits">Alcohol &amp; spirits</option><option value="Health &amp; beauty">Health &amp; beauty</option><option value="Pet">Pet</option><option value="FMCG">FMCG (other)</option></select></div></div>
+    <div class="field"><label>Where are you based?</label><div class="sel"><select id="m_city" oninput="upd()">
+      <option value="">Any city</option><option>Melbourne</option><option>Sydney</option><option>Adelaide</option><option>Brisbane</option><option>National</option></select></div></div>
+    <div class="field" style="margin-bottom:0"><label>Stage</label><div class="sel"><select id="m_stage" oninput="upd()">
+      <option>Launching a new product</option><option>Refreshing existing packaging</option><option>Entering retail</option><option>Not sure yet</option></select></div></div>
+  </div>
+
+  <div class="prev">
+    <div class="kk">Your match</div>
+    <h2 id="ph">Studios for your project</h2>
+    <p id="pp">Choose your category, city and stage and we will tailor a shortlisting path for you.</p>
+    <ol class="steps">
+      <li>Open the directory filtered to your sector and city</li>
+      <li>Shortlist two or three studios whose work fits</li>
+      <li>Send them the same brief, or start with an expert Review</li>
+    </ol>
+    <div class="pbtns"><a class="btn" id="pbtn" href="find-a-packaging-designer.html">Browse matching studios</a><a class="btn gh" href="brief-builder.html">Build a brief</a></div>
+  </div>
+</div></div>
+
+<section class="cta"><div class="wrap">
+  <div class="label">Not sure where your pack stands?</div>
+  <h2>Start with a <span class="it">Review.</span></h2>
+  <p>An independent read of your current packaging from Morice &amp; Co, the studio behind this resource, shows what to fix first.</p>
+  <a class="btn" href="request-a-review.html">Request a Review</a> <a class="btn gh" href="find-a-packaging-designer.html">Browse the directory</a>
+</div></section>
+
+<footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="guides.html">Resources</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a></div></footer>
+
+<script>
+function upd(){
+  var cat=document.getElementById('m_cat'),city=document.getElementById('m_city').value,st=document.getElementById('m_stage').value;
+  var ct=cat.selectedOptions[0].text;
+  document.getElementById('ph').innerHTML='<b>'+ct+'</b> packaging studios'+(city?' in <b>'+city+'</b>':'');
+  var stage={'Launching a new product':'launching a new product','Refreshing existing packaging':'refreshing your packaging','Entering retail':'entering retail','Not sure yet':'figuring out next steps'}[st]||'';
+  document.getElementById('pp').textContent='For '+ct.toLowerCase()+(city?' in '+city:'')+', '+stage+': here is how to shortlist well.';
+  document.getElementById('pbtn').textContent='Browse '+ct+' studios';
+}
+upd();
+</script>
+<style>
+header{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+header.nav-hidden{transform:translateY(-100%)}
+#toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent,#2c45c9);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;box-shadow:0 10px 26px -8px rgba(20,20,15,.45)}
+#toTop.show{opacity:1;visibility:visible;transform:none}
+#toTop:hover{background:#16160f}#toTop svg{width:20px;height:20px}
+@media(max-width:680px){#toTop{right:16px;bottom:16px}}
+@media print{#toTop{display:none}}
+</style>
+<button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<script>
+(function(){var h=document.querySelector('header'),btn=document.getElementById('toTop'),last=window.pageYOffset||0,tick=false;
+function on(){var y=window.pageYOffset||0;
+ if(btn){btn.classList.toggle('show',y>500);}
+ if(h){if(y>last&&y>140){h.classList.add('nav-hidden');}else{h.classList.remove('nav-hidden');}}
+ last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});on();})();
+</script>
+<style>.nav-r a.m.cur{color:var(--accent)!important;font-weight:600}</style><script id="navcur">(function(){var here=(location.pathname.split("/").pop()||"index.html");var RES=["guides.html","packaging-design-cost.html","brief-builder.html","get-matched.html","retail-readiness-checklist.html","glossary.html","case-studies.html","supplement-packaging-design.html","compliance-checker.html","supermarket-map.html","packaging-marks-symbols.html"];var studio=location.pathname.indexOf("/studios/")>-1;document.querySelectorAll(".nav-r a.m").forEach(function(a){var hn=(a.getAttribute("href")||"").split("/").pop();var on=false;if(hn===here)on=true;if((here==="find-a-packaging-designer.html"||studio)&&hn==="find-a-packaging-designer.html")on=true;if(RES.indexOf(here)>-1&&hn==="guides.html")on=true;if(on)a.classList.add("cur");});})();</script></body></html>

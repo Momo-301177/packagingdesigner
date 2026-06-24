@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- Tool: compliance pre-flight. Visual category cards + animated result. Sen + Space Grotesk numerals, blueprint blue, not legal advice. -->
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Packaging Compliance Pre-flight Checker (Australia) | PackagingDesigner.com.au</title>
+<meta name="description" content="A free tool to check which Australian labelling rules apply to your product and what mandatory information your packaging needs.">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Bitcount+Prop+Single&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#f3f2ee;--paper:#fafaf7;--ink:#16160f;--ink2:#3a3a32;--mut:#8c897e;--line:#e0ded6;--accent:#2c45c9;--display:"Sen",sans-serif;--sans:"Sen",-apple-system,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);background:var(--bone);color:var(--ink);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}.narrow{max-width:920px;margin:0 auto}@media(max-width:680px){.wrap{padding:0 22px}}
+a{color:inherit;text-decoration:none}.it{color:var(--accent);font-weight:inherit}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+header{position:sticky;top:0;z-index:40;background:rgba(243,242,238,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}.wm{font-family:var(--display);font-weight:800;font-size:22px}.wm .d{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:22px}.nav-r a.m{font-size:14px;color:var(--ink2)}.nav-r a.m:hover{color:var(--ink)}
+.nav-r .cta{font-size:14px;font-weight:600;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:10px 18px;border-radius:1px;transition:.2s}.nav-r .cta:hover{background:var(--ink);color:var(--bone)}
+@media(max-width:900px){.nav-r a.m{display:none}}.crumb{padding:30px 0 0;font-size:13px;color:var(--mut)}.crumb a{color:var(--mut)}
+.hero{padding:26px 0 46px;border-bottom:1px solid var(--line)}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,78px);letter-spacing:-.025em;line-height:1.0;margin:12px 0 20px;max-width:18ch}h1 .it{font-weight:inherit}
+.stand{font-size:clamp(18px,1.9vw,22px);color:var(--ink2);max-width:60ch;margin:0}
+section{padding:56px 0}.tint{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stepn{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--accent);font-family:"Bitcount Prop Single",var(--display)}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,32px);letter-spacing:-.02em;margin:6px 0 22px}
+/* category cards */
+.opts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 0}@media(max-width:900px){.opts{grid-template-columns:repeat(2,1fr)}}
+.opt{border:1.5px solid var(--line);background:var(--paper);border-radius:8px;padding:20px 16px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;font-weight:600;transition:.18s;display:flex;flex-direction:column;gap:12px;color:var(--ink)}
+.opt .ic{width:40px;height:40px}.opt .ic img,.opt .ic svg{width:100%;height:100%;object-fit:contain;display:block}
+.opt:hover{border-color:var(--accent);transform:translateY(-3px)}
+.opt.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.opt.on .ic img{filter:brightness(0) invert(1)}.opt.on .ic svg{stroke:#fff}
+.toggle{display:inline-flex;gap:11px;align-items:center;margin:24px 0 0;font-size:15px;cursor:pointer;font-weight:600}
+.toggle input{position:absolute;opacity:0;pointer-events:none}
+.toggle .bx{width:22px;height:22px;border:1.5px solid var(--ink2);border-radius:6px;display:grid;place-items:center;transition:.18s}
+.toggle input:checked+.bx{background:var(--accent);border-color:var(--accent)}
+.toggle .bx svg{width:12px;height:12px;opacity:0;transition:.18s}.toggle input:checked+.bx svg{opacity:1}
+/* result */
+.result{border:1px solid var(--ink);background:#fff;border-radius:8px;padding:0;margin-top:30px;display:none;overflow:hidden}
+.result.show{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rhead{background:var(--ink);color:var(--bone);padding:26px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.rhead .fw{font-family:var(--display);font-weight:700;font-size:clamp(19px,2.4vw,26px);color:#fff;letter-spacing:-.01em;margin:0}
+.rhead .id{color:rgba(243,242,238,.66);font-size:13.5px;margin-top:4px;max-width:48ch}
+.cnt{text-align:center;flex:none}
+.cnt .n{font-family:"Bitcount Prop Single",var(--display);font-weight:700;font-size:46px;line-height:1;color:#5b86ff}
+.cnt .l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9a978b;margin-top:4px}
+.rbody{padding:30px}
+.mlist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}@media(max-width:640px){.mlist{grid-template-columns:1fr}}
+.mlist li{padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;position:relative;padding-left:30px;color:var(--ink2)}
+.mlist li svg{position:absolute;left:0;top:13px;width:17px;height:17px}
+.pit{background:var(--paper);border-left:3px solid var(--accent);padding:14px 18px;font-size:14.5px;margin:22px 0 0;border-radius:0 4px 4px 0}.pit b{color:var(--ink)}
+.pit.warn{border-color:#c2410c}
+.racts{margin-top:24px}
+.btn{display:inline-block;background:var(--ink);color:var(--bone);font-weight:600;font-size:14px;padding:13px 24px;border-radius:3px;margin:8px 8px 0 0}.btn.gh{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+.disc{font-size:12.5px;color:var(--mut);border-top:1px solid var(--line);padding-top:14px;margin-top:30px}
+.cta{background:var(--ink);color:var(--bone);text-align:center;padding:90px 0}.cta h2{font-size:clamp(28px,4vw,52px);color:#fff;margin:0 auto 22px;max-width:18ch}.cta h2 .it{color:#5b86ff}.cta p{color:rgba(243,242,238,.72);max-width:46ch;margin:0 auto 26px}
+.cta .btn{background:var(--bone);color:var(--ink)}.cta .btn.gh{background:transparent;border:1px solid rgba(243,242,238,.4);color:var(--bone)}
+footer{padding:50px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}footer a{color:var(--ink2)}footer a:hover{color:var(--ink)}
+</style><style>
+.hero .herogrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .herogrid{grid-template-columns:1fr;gap:24px}}
+.hero .herotext h1{max-width:15ch;font-size:clamp(32px,4.3vw,58px)}
+.hero .heroart{line-height:0}
+.hero .heroart img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center}
+@media(max-width:860px){.hero .heroart img{max-height:230px;object-position:left}}
+</style>
+<style>.wm{display:inline-flex;align-items:center;gap:9px}.wm .wmi{height:26px;width:auto;flex:none;display:block}</style><link rel="canonical" href="https://packagingdesigner.com.au/compliance-checker.html"><meta property="og:type" content="website"><meta property="og:site_name" content="PackagingDesigner.com.au"><meta property="og:locale" content="en_AU"><meta property="og:title" content="Packaging Compliance Pre-flight Checker (Australia) | PackagingDesigner.com.au"><meta property="og:description" content="A free tool to check which Australian labelling rules apply to your product and what mandatory information your packaging needs."><meta property="og:url" content="https://packagingdesigner.com.au/compliance-checker.html"><meta property="og:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Packaging Compliance Pre-flight Checker (Australia) | PackagingDesigner.com.au"><meta name="twitter:description" content="A free tool to check which Australian labelling rules apply to your product and what mandatory information your packaging needs."><meta name="twitter:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><link rel="icon" href="/assets/seo/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/seo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/assets/seo/apple-touch-icon.png"><meta name="theme-color" content="#2c45c9"></head><body>
+<header><div class="wrap"><a class="wm" href="index.html"><img class="wmi" src="assets/icons/packaging-designer-finder/packaging-designer-finder-logo.svg" alt=""><span class="wmt">Packaging Designer<span class="d"> Finder</span></span></a>
+<nav class="nav-r"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m" href="insights.html">Insights</a><a class="m" href="index.html#review">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header><style>
+.subnav{position:fixed;left:0;right:0;top:74px;z-index:25;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-170%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 10px 22px -16px rgba(20,20,15,.4)}
+.subnav.show{transform:translateY(0)}
+.subnav .in{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;gap:4px;overflow-x:auto;height:46px;align-items:center;scrollbar-width:none}
+.subnav .in::-webkit-scrollbar{display:none}
+.subnav a{flex:none;font-size:13px;font-weight:500;color:var(--ink2);padding:6px 13px;border-radius:99px;white-space:nowrap;transition:.15s;margin:0}
+.subnav a:hover{background:var(--bone);color:var(--ink)}
+.subnav a.cur{background:var(--accent);color:#fff}
+@media(max-width:680px){.subnav .in{padding:0 16px}}
+</style>
+<nav class="subnav" id="subnav" aria-label="Resources"><div class="in"><a href="guides.html">Resources</a><a href="insights.html">Insights</a><a href="packaging-design-cost.html">What it costs</a><a href="brief-builder.html">Brief builder</a><a href="get-matched.html">Get matched</a><a href="packaging-formats-substrates.html">Formats</a><a href="packaging-marks-symbols.html">Marks &amp; symbols</a><a href="compliance-checker.html">Compliance</a><a href="retail-readiness-checklist.html">Retail readiness</a><a href="supplement-packaging-design.html">Supplements</a><a href="supermarket-map.html">Aisle map</a><a href="case-studies.html">Case studies</a><a href="glossary.html">Glossary</a></div></nav>
+<script>
+(function(){var sn=document.getElementById('subnav');if(!sn)return;var last=window.pageYOffset||0,tick=false;
+var here=(location.pathname.split('/').pop()||'');
+sn.querySelectorAll('a').forEach(function(a){if(a.getAttribute('href')===here)a.classList.add('cur');});
+function on(){var y=window.pageYOffset||0;if(y<last-2&&y>170){sn.classList.add('show');}else if(y>last+2||y<=120){sn.classList.remove('show');}last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});})();
+</script>
+
+<div class="wrap"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="guides.html">Resources</a> &nbsp;/&nbsp; Compliance pre-flight</div></div>
+
+<section class="hero"><div class="wrap"><div class="herogrid"><div class="herotext"><div class="label">Free tool</div>
+<h1>Packaging compliance <span class="it">pre-flight.</span></h1>
+<p class="stand">Before you design, know which rules apply. Choose your product type and we will show the regulatory framework and the mandatory information your pack is likely to need in Australia.</p></div><div class="heroart"><img src="assets/icons/resources/compliance-preflight.svg" alt="" loading="lazy"></div></div></div></section>
+
+<section><div class="wrap">
+<div class="stepn">STEP 1</div>
+<h2>What are you <span class="it">packaging?</span></h2>
+<div class="opts" id="opts">
+  <button class="opt" data-k="supp"><span class="ic"><img src="assets/icons/the-aisle-map/supplements.svg" alt=""></span>Vitamins &amp; supplements</button>
+  <button class="opt" data-k="sports"><span class="ic"><img src="assets/icons/compliance-pre-flight/sports-nutrition.svg" alt=""></span>Protein &amp; sports nutrition</button>
+  <button class="opt" data-k="food"><span class="ic"><img src="assets/icons/the-aisle-map/food.svg" alt=""></span>Food</button>
+  <button class="opt" data-k="bev"><span class="ic"><img src="assets/icons/the-aisle-map/beverage.svg" alt=""></span>Beverage (non-alcoholic)</button>
+  <button class="opt" data-k="alc"><span class="ic"><img src="assets/icons/the-aisle-map/alcohol-spirits.svg" alt=""></span>Alcohol &amp; spirits</button>
+  <button class="opt" data-k="beauty"><span class="ic"><img src="assets/icons/the-aisle-map/health-beauty.svg" alt=""></span>Cosmetics &amp; personal care</button>
+  <button class="opt" data-k="pet"><span class="ic"><img src="assets/icons/the-aisle-map/pet.svg" alt=""></span>Pet food</button>
+  <button class="opt" data-k="house"><span class="ic"><img src="assets/icons/the-aisle-map/household.svg" alt=""></span>Household &amp; cleaning</button>
+</div>
+<label class="toggle"><input type="checkbox" id="claim"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L6 11L12 3.5"/></svg></span> My product makes a health or therapeutic claim</label>
+<div class="result" id="res"></div>
+<p class="disc" id="discbase">This tool gives general guidance to help you brief and plan. It is not legal or regulatory advice. Requirements depend on your specific product, ingredients and claims. Always confirm with the TGA, FSANZ, AICIS or a qualified regulatory consultant before going to print.</p>
+</div></section>
+
+<section class="cta"><div class="wrap"><div class="label" style="color:#a8a596;margin-bottom:18px">Design it right the first time</div>
+<h2>Get compliance built into the <span class="it">design.</span></h2>
+<p>The studios in our directory build mandatory information in from the first concept, not at the last minute.</p>
+<a class="btn" href="find-a-packaging-designer.html">Find a designer</a> <a class="btn gh" href="request-a-review.html">Request a Review</a></div></section>
+
+<footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="guides.html">Resources</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a></div></footer>
+
+<script>
+var D={
+ supp:{fw:"TGA, complementary medicine",id:"Usually carries an AUST L, AUST L(A) or AUST R number",must:["AUST L / AUST R number","Active ingredients and quantities","Directions for use","Warning and advisory statements","Batch number","Expiry date","Storage conditions","Sponsor name and Australian address"],pit:"Hidden or vague dosages and claims beyond what the listing permits are the most common problems."},
+ sports:{fw:"FSANZ food or TGA, depending on composition and claims",id:"Often a Formulated Supplementary Sports Food under the Food Standards Code, but some are regulated as therapeutic goods",must:["Nutrition information panel","Ingredient list","Allergen declarations","Directions for use and any advisory statements","Net weight","Lot or batch and date marking","Business name and address","Country of origin"],pit:"Classification is the key decision. Get it confirmed before artwork, because food and therapeutic rules differ."},
+ food:{fw:"FSANZ, Food Standards Code",id:"No registration number, but strict mandatory labelling",must:["Nutrition information panel","Ingredient list (descending order)","Allergen declarations","Date marking (best before / use by)","Country of origin labelling","Net weight / measure","Lot identification","Business name and address","Storage and directions where needed"],pit:"Allergens and country of origin labelling are the areas most often gotten wrong."},
+ bev:{fw:"FSANZ, Food Standards Code (as a food)",id:"Same framework as food",must:["Nutrition information panel","Ingredient list","Allergen declarations","Date marking","Country of origin","Net volume","Lot identification","Business name and address"],pit:"Sugar and health-style claims are tightly regulated. Keep them within what is permitted."},
+ alc:{fw:"FSANZ, plus alcohol-specific rules",id:"Food Standards Code with alcohol requirements",must:["Standard drinks statement","Alcohol by volume (% ABV)","Pregnancy warning label (mandatory)","Allergen declarations where relevant","Net volume","Lot identification","Country of origin","Business name and address"],pit:"The pregnancy warning label has specific size, colour and wording rules. Build it in early."},
+ beauty:{fw:"Cosmetic labelling, AICIS and consumer law",id:"Ingredient labelling required; therapeutic claims push it to the TGA",must:["Ingredient list (INCI names)","Net contents","Directions for use","Warnings and cautions","Batch identification","Name and address of supplier","Country of origin"],pit:"A therapeutic claim (e.g. treats a condition) can reclassify a cosmetic as a therapeutic good. Word claims carefully."},
+ pet:{fw:"Not human-food regulated; voluntary AS 5812 standard and fair-trading rules",id:"Self-regulated, but labelling norms and consumer law apply",must:["Product name and type","Ingredient or constituent information","Feeding directions","Net weight","Batch and date marking","Manufacturer / importer name and address","Country of origin"],pit:"\"Meat meal\" and vague ingredient terms erode trust. Be specific and honest."},
+ house:{fw:"Hazardous substances / dangerous goods labelling (GHS)",id:"Safety and poison-schedule rules apply",must:["Product identifier","Hazard pictograms and signal word","Hazard and precautionary statements","Safety directions / first aid","Net contents","Poison schedule signal heading where applicable","Supplier name and Australian address"],pit:"GHS hazard labelling and poison-schedule wording are legal requirements, not design choices."}
+};
+var TICK='<svg viewBox="0 0 17 17" fill="none" stroke="#2c45c9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L7 13L14 4"/></svg>';
+var cur=null;
+document.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){document.querySelectorAll(".opt").forEach(function(x){x.classList.remove("on")});b.classList.add("on");cur=b.dataset.k;render();}});
+document.getElementById("claim").onchange=render;
+function countUp(el,to){var s=0,step=Math.max(1,Math.round(to/14));var t=setInterval(function(){s+=step;if(s>=to){s=to;clearInterval(t);}el.textContent=s;},28);}
+function render(){
+  if(!cur)return;
+  var d=D[cur],claim=document.getElementById("claim").checked;
+  var items=d.must.map(function(m){return '<li>'+TICK+m+'</li>';}).join("");
+  var h='<div class="rhead"><div><div class="label" style="color:#9a978b">Likely framework</div><p class="fw">'+d.fw+'</p><div class="id">'+d.id+'</div></div>'
+      +'<div class="cnt"><div class="n" id="rcount">0</div><div class="l">mandatory items</div></div></div>';
+  h+='<div class="rbody"><div class="label" style="margin-bottom:12px">Mandatory on-pack (typical)</div><ul class="mlist">'+items+'</ul>';
+  h+='<div class="pit"><b>Watch out:</b> '+d.pit+'</div>';
+  if(claim){h+='<div class="pit warn"><b>Because you make a health or therapeutic claim:</b> claims can change how your product is classified and may bring it under TGA regulation. Confirm what you are permitted to say before designing the pack.</div>';}
+  h+='<div class="racts"><a class="btn" href="index.html#review">Get an expert read</a> <a class="btn gh" href="packaging-marks-symbols.html">See on-pack marks</a></div></div>';
+  var r=document.getElementById("res");r.innerHTML=h;r.classList.add("show");
+  countUp(document.getElementById("rcount"),d.must.length);
+}
+</script>
+<style>
+header{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+header.nav-hidden{transform:translateY(-100%)}
+#toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent,#2c45c9);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;box-shadow:0 10px 26px -8px rgba(20,20,15,.45)}
+#toTop.show{opacity:1;visibility:visible;transform:none}
+#toTop:hover{background:#16160f}#toTop svg{width:20px;height:20px}
+@media(max-width:680px){#toTop{right:16px;bottom:16px}}
+@media print{#toTop{display:none}}
+</style>
+<button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<script>
+(function(){var h=document.querySelector('header'),btn=document.getElementById('toTop'),last=window.pageYOffset||0,tick=false;
+function on(){var y=window.pageYOffset||0;
+ if(btn){btn.classList.toggle('show',y>500);}
+ if(h){if(y>last&&y>140){h.classList.add('nav-hidden');}else{h.classList.remove('nav-hidden');}}
+ last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});on();})();
+</script>
+<style>.nav-r a.m.cur{color:var(--accent)!important;font-weight:600}</style><script id="navcur">(function(){var here=(location.pathname.split("/").pop()||"index.html");var RES=["guides.html","packaging-design-cost.html","brief-builder.html","get-matched.html","retail-readiness-checklist.html","glossary.html","case-studies.html","supplement-packaging-design.html","compliance-checker.html","supermarket-map.html","packaging-marks-symbols.html"];var studio=location.pathname.indexOf("/studios/")>-1;document.querySelectorAll(".nav-r a.m").forEach(function(a){var hn=(a.getAttribute("href")||"").split("/").pop();var on=false;if(hn===here)on=true;if((here==="find-a-packaging-designer.html"||studio)&&hn==="find-a-packaging-designer.html")on=true;if(RES.indexOf(here)>-1&&hn==="guides.html")on=true;if(on)a.classList.add("cur");});})();</script></body></html>

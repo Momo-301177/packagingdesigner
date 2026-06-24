@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- Tool: Brief builder. Stepped wizard + progress + live preview. Sen + Space Grotesk numerals, blueprint blue, no em dashes. -->
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Packaging Design Brief Builder | PackagingDesigner.com.au</title>
+<meta name="description" content="A free step-by-step tool to build a clear, agency-ready packaging design brief in minutes. Fill it in, watch it build, then copy or download.">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Bitcount+Prop+Single&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#f3f2ee;--paper:#fafaf7;--ink:#16160f;--ink2:#3a3a32;--mut:#8c897e;--line:#e0ded6;--accent:#2c45c9;--display:"Sen",sans-serif;--sans:"Sen",-apple-system,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);background:var(--bone);color:var(--ink);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}@media(max-width:680px){.wrap{padding:0 22px}}
+a{color:inherit;text-decoration:none}.it{color:var(--accent);font-weight:inherit}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+header{position:sticky;top:0;z-index:40;background:rgba(243,242,238,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.wm{font-family:var(--display);font-weight:800;font-size:22px}.wm .d{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:22px}.nav-r a.m{font-size:14px;color:var(--ink2)}.nav-r a.m:hover{color:var(--ink)}
+.nav-r .cta{font-size:14px;font-weight:600;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:10px 18px;border-radius:1px;transition:.2s}.nav-r .cta:hover{background:var(--ink);color:var(--bone)}
+@media(max-width:900px){.nav-r a.m{display:none}}
+.crumb{padding:26px 0 0;font-size:13px;color:var(--mut)}.crumb a{color:var(--mut)}
+.hero{padding:34px 0 26px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,80px);letter-spacing:-.03em;line-height:.98;margin:14px 0 18px;max-width:15ch}
+.stand{font-size:clamp(17px,1.7vw,21px);color:var(--ink2);max-width:54ch;margin:0}
+/* tool grid */
+.toolgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;padding:26px 0 90px;align-items:start}@media(max-width:900px){.toolgrid{grid-template-columns:1fr;gap:22px}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:32px}
+/* stepper */
+.stepper{display:flex;gap:8px;margin-bottom:8px}
+.stepper .st{flex:1;text-align:center}
+.stepper .dot{display:flex;align-items:center;justify-content:center;width:34px;height:34px;margin:0 auto 8px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-family:"Bitcount Prop Single",var(--display);font-weight:700;font-size:15px;color:var(--mut);transition:.25s}
+.stepper .st.on .dot{border-color:var(--accent);background:var(--accent);color:#fff}
+.stepper .st.done .dot{border-color:var(--accent);background:#fff;color:var(--accent)}
+.stepper .nm{font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--mut)}
+.stepper .st.on .nm{color:var(--ink)}
+.pbar{height:6px;background:var(--line);border-radius:40px;overflow:hidden;margin:18px 0 26px}
+.pbar i{display:block;height:100%;width:33%;background:var(--accent);border-radius:40px;transition:width .4s cubic-bezier(.2,.7,.2,1)}
+.stephead{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0 0 2px}
+.stepsub{font-size:13.5px;color:var(--mut);margin:0 0 22px}
+.step{display:none}.step.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.field{margin:0 0 18px}.field label{display:block;font-size:13px;font-weight:600;letter-spacing:.03em;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:15px;padding:13px 15px;border:1.5px solid var(--line);border-radius:5px;background:#fff;color:var(--ink);transition:border-color .18s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent)}
+.field textarea{min-height:84px;resize:vertical}
+.field .hint{font-size:12px;color:var(--mut);margin-top:5px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}@media(max-width:520px){.f2{grid-template-columns:1fr}}
+.sel{position:relative}.sel:after{content:"";position:absolute;right:16px;top:50%;width:8px;height:8px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.sel select{appearance:none;font-weight:600}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:14px;padding:13px 24px;border-radius:4px;cursor:pointer;border:0;background:var(--ink);color:var(--bone);transition:.18s}.btn:hover{background:var(--accent)}
+.btn.gh{background:transparent;border:1px solid var(--line);color:var(--ink)}.btn.gh:hover{background:#fff;border-color:var(--ink)}
+.btn[disabled]{opacity:.4;pointer-events:none}
+/* live preview */
+.prev{position:sticky;top:96px;background:var(--ink);color:var(--bone);border-radius:8px;padding:30px;overflow:hidden}
+.prev .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.prev .ph .kk{font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9a978b}
+.ring{display:flex;align-items:center;gap:10px}
+.ring svg{width:46px;height:46px;transform:rotate(-90deg)}
+.ring .tr{fill:none;stroke:rgba(255,255,255,.16);stroke-width:5}
+.ring .br{fill:none;stroke:#5b86ff;stroke-width:5;stroke-linecap:round;transition:stroke-dashoffset .5s cubic-bezier(.2,.7,.2,1)}
+.ring .pct{font-family:"Bitcount Prop Single",var(--display);font-weight:700;font-size:18px;color:#fff}
+.doc{font-size:14.5px;line-height:1.5}
+.doc .dt{font-family:var(--display);font-weight:700;font-size:20px;color:#fff;letter-spacing:-.01em;margin:0 0 2px}
+.doc .dcat{color:#5b86ff;font-weight:600;font-size:13px;margin-bottom:18px}
+.doc .frow{padding:11px 0;border-top:1px solid rgba(243,242,238,.14)}
+.doc .frow .fk{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9a978b;font-weight:600}
+.doc .frow .fv{color:rgba(243,242,238,.92)}
+.doc .frow .fv.empty{color:rgba(243,242,238,.34)}
+.pbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.prev .btn{background:var(--bone);color:var(--ink)}.prev .btn:hover{background:#fff}
+.prev .btn.gh{background:transparent;border:1px solid rgba(243,242,238,.4);color:var(--bone)}.prev .btn.gh:hover{background:rgba(255,255,255,.08)}
+.copied{font-size:12.5px;color:#5b86ff;margin-top:10px;height:16px;font-weight:600}
+/* tips strip */
+.tips{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:80px 0}
+.tipg{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:44px}@media(max-width:760px){.tipg{grid-template-columns:1fr;gap:40px}}
+.tipg .b{border-top:2px solid var(--ink);padding-top:24px}
+.tipg .n{font-family:"Bitcount Prop Single",var(--display);font-weight:400;color:var(--accent);font-size:clamp(38px,4.4vw,52px);line-height:1;display:block;margin-bottom:14px}
+.tipg h3{font-family:var(--display);font-weight:700;font-size:21px;margin:0 0 8px;letter-spacing:-.01em}.tipg p{font-size:15px;margin:0;color:var(--ink2);line-height:1.6}
+.cta{background:var(--ink);color:var(--bone);text-align:center;padding:96px 0}.cta h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,52px);letter-spacing:-.03em;color:#fff;margin:14px auto 22px;max-width:18ch}.cta h2 .it{color:#5b86ff}.cta p{color:rgba(243,242,238,.72);max-width:46ch;margin:0 auto 26px}
+.cta .btn{background:var(--bone);color:var(--ink)}.cta .btn:hover{background:#fff}.cta .btn.gh{background:transparent;border:1px solid rgba(243,242,238,.4);color:var(--bone)}
+footer{padding:50px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}footer a{color:var(--ink2)}footer a:hover{color:var(--ink)}
+.label2{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+</style><style>
+.hero .herogrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .herogrid{grid-template-columns:1fr;gap:24px}}
+.hero .herotext h1{max-width:15ch;font-size:clamp(32px,4.3vw,58px)}
+.hero .heroart{line-height:0}
+.hero .heroart img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center}
+@media(max-width:860px){.hero .heroart img{max-height:230px;object-position:left}}
+</style>
+<style>.wm{display:inline-flex;align-items:center;gap:9px}.wm .wmi{height:26px;width:auto;flex:none;display:block}</style><link rel="canonical" href="https://packagingdesigner.com.au/brief-builder.html"><meta property="og:type" content="website"><meta property="og:site_name" content="PackagingDesigner.com.au"><meta property="og:locale" content="en_AU"><meta property="og:title" content="Packaging Design Brief Builder | PackagingDesigner.com.au"><meta property="og:description" content="A free step-by-step tool to build a clear, agency-ready packaging design brief in minutes. Fill it in, watch it build, then copy or download."><meta property="og:url" content="https://packagingdesigner.com.au/brief-builder.html"><meta property="og:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Packaging Design Brief Builder | PackagingDesigner.com.au"><meta name="twitter:description" content="A free step-by-step tool to build a clear, agency-ready packaging design brief in minutes. Fill it in, watch it build, then copy or download."><meta name="twitter:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><link rel="icon" href="/assets/seo/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/seo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/assets/seo/apple-touch-icon.png"><meta name="theme-color" content="#2c45c9"></head><body>
+<header><div class="wrap"><a class="wm" href="index.html"><img class="wmi" src="assets/icons/packaging-designer-finder/packaging-designer-finder-logo.svg" alt=""><span class="wmt">Packaging Designer<span class="d"> Finder</span></span></a>
+<nav class="nav-r"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m" href="insights.html">Insights</a><a class="m" href="index.html#review">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header><style>
+.subnav{position:fixed;left:0;right:0;top:74px;z-index:25;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-170%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 10px 22px -16px rgba(20,20,15,.4)}
+.subnav.show{transform:translateY(0)}
+.subnav .in{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;gap:4px;overflow-x:auto;height:46px;align-items:center;scrollbar-width:none}
+.subnav .in::-webkit-scrollbar{display:none}
+.subnav a{flex:none;font-size:13px;font-weight:500;color:var(--ink2);padding:6px 13px;border-radius:99px;white-space:nowrap;transition:.15s;margin:0}
+.subnav a:hover{background:var(--bone);color:var(--ink)}
+.subnav a.cur{background:var(--accent);color:#fff}
+@media(max-width:680px){.subnav .in{padding:0 16px}}
+</style>
+<nav class="subnav" id="subnav" aria-label="Resources"><div class="in"><a href="guides.html">Resources</a><a href="insights.html">Insights</a><a href="packaging-design-cost.html">What it costs</a><a href="brief-builder.html">Brief builder</a><a href="get-matched.html">Get matched</a><a href="packaging-formats-substrates.html">Formats</a><a href="packaging-marks-symbols.html">Marks &amp; symbols</a><a href="compliance-checker.html">Compliance</a><a href="retail-readiness-checklist.html">Retail readiness</a><a href="supplement-packaging-design.html">Supplements</a><a href="supermarket-map.html">Aisle map</a><a href="case-studies.html">Case studies</a><a href="glossary.html">Glossary</a></div></nav>
+<script>
+(function(){var sn=document.getElementById('subnav');if(!sn)return;var last=window.pageYOffset||0,tick=false;
+var here=(location.pathname.split('/').pop()||'');
+sn.querySelectorAll('a').forEach(function(a){if(a.getAttribute('href')===here)a.classList.add('cur');});
+function on(){var y=window.pageYOffset||0;if(y<last-2&&y>170){sn.classList.add('show');}else if(y>last+2||y<=120){sn.classList.remove('show');}last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});})();
+</script>
+
+<div class="wrap"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="guides.html">Resources</a> &nbsp;/&nbsp; Brief builder</div></div>
+
+<section class="hero"><div class="wrap"><div class="herogrid"><div class="herotext">
+  <div class="label">Tool &middot; 3 steps &middot; about 4 minutes</div>
+  <h1>Build a clear packaging <span class="it">brief.</span></h1>
+  <p class="stand">A good brief gets you better work, faster, and lets you compare studios fairly. Answer three short steps and watch your brief build on the right, then copy or download it to send.</p>
+</div><div class="heroart"><img src="assets/icons/resources/brief-builder.svg" alt="" loading="lazy"></div></div></div></section>
+
+<div class="wrap"><div class="toolgrid">
+  <div class="card">
+    <div class="stepper">
+      <div class="st on" data-s="1"><div class="dot">1</div><div class="nm">Product</div></div>
+      <div class="st" data-s="2"><div class="dot">2</div><div class="nm">Market</div></div>
+      <div class="st" data-s="3"><div class="dot">3</div><div class="nm">Project</div></div>
+    </div>
+    <div class="pbar"><i id="pbar"></i></div>
+
+    <!-- Step 1 -->
+    <div class="step on" data-step="1">
+      <div class="stephead">What are you making?</div>
+      <p class="stepsub">The basics a studio needs to picture the product.</p>
+      <div class="f2">
+        <div class="field"><label>Brand / product name</label><input id="b_name" placeholder="e.g. Acme Magnesium" oninput="upd()"></div>
+        <div class="field"><label>Category</label><div class="sel"><select id="b_cat" oninput="upd()"><option>Supplements</option><option>Food</option><option>Beverage</option><option>Alcohol &amp; spirits</option><option>Health &amp; beauty</option><option>Pet</option><option>Household</option><option>Baby &amp; kids</option><option>FMCG (other)</option></select></div></div>
+      </div>
+      <div class="field"><label>What is the product, in one line?</label><input id="b_what" placeholder="e.g. A high-strength magnesium powder for active women" oninput="upd()"></div>
+      <div class="field"><label>What makes it different?</label><textarea id="b_diff" placeholder="The one or two things that matter most" oninput="upd()"></textarea><div class="hint">Designers lean on this more than anything else.</div></div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step" data-step="2">
+      <div class="stephead">Who and where?</div>
+      <p class="stepsub">The shelf and the shopper the pack has to win.</p>
+      <div class="field"><label>Who is it for?</label><input id="b_who" placeholder="e.g. Women 25 to 45, fitness-focused" oninput="upd()"></div>
+      <div class="field"><label>Where will it sell?</label><input id="b_where" placeholder="e.g. Chemist Warehouse, our website, gyms" oninput="upd()"></div>
+      <div class="field"><label>Main competitors</label><input id="b_comp" placeholder="e.g. BioCeuticals, Ethical Nutrients" oninput="upd()"><div class="hint">Two or three names is plenty.</div></div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step" data-step="3">
+      <div class="stephead">Scope and constraints</div>
+      <p class="stepsub">What you need done, and what can't change.</p>
+      <div class="f2">
+        <div class="field"><label>What do you need?</label><div class="sel"><select id="b_scope" oninput="upd()"><option>Label / pack design only</option><option>Brand identity + packaging</option><option>Full brand + range system</option><option>Structural / custom format</option><option>Not sure yet</option></select></div></div>
+        <div class="field"><label>Number of SKUs</label><input id="b_sku" placeholder="e.g. 3" oninput="upd()"></div>
+      </div>
+      <div class="f2">
+        <div class="field"><label>Timeline</label><input id="b_time" placeholder="e.g. On shelf by March" oninput="upd()"></div>
+        <div class="field"><label>Budget band</label><div class="sel"><select id="b_budget" oninput="upd()"><option>Under $8k</option><option>$8k to $18k</option><option>$18k to $40k</option><option>$40k+</option><option>Need guidance</option></select></div></div>
+      </div>
+      <div class="field"><label>Must-haves / non-negotiables</label><textarea id="b_must" placeholder="e.g. Keep our logo; needs to fit an existing bottle" oninput="upd()"></textarea></div>
+    </div>
+
+    <div class="nav">
+      <button class="btn gh" id="prev" onclick="go(-1)" disabled>Back</button>
+      <button class="btn" id="next" onclick="go(1)">Next step</button>
+    </div>
+  </div>
+
+  <div class="prev">
+    <div class="ph">
+      <div class="kk">Your brief, live</div>
+      <div class="ring">
+        <svg viewBox="0 0 46 46"><circle class="tr" cx="23" cy="23" r="19"/><circle class="br" id="ring" cx="23" cy="23" r="19" stroke-dasharray="119.4" stroke-dashoffset="119.4"/></svg>
+        <span class="pct" id="pct">0%</span>
+      </div>
+    </div>
+    <div class="doc" id="doc"></div>
+    <div class="pbtns">
+      <button class="btn" onclick="copyb()">Copy brief</button>
+      <button class="btn gh" onclick="dl()">Download .txt</button>
+    </div>
+    <div class="copied" id="copied"></div>
+  </div>
+</div></div>
+
+<section class="tips"><div class="wrap">
+  <div class="label2">What good looks like</div>
+  <div class="tipg">
+    <div class="b"><div class="n">01</div><h3>Lead with the difference</h3><p>One sharp sentence on why the product exists beats a page of features. It sets the whole design direction.</p></div>
+    <div class="b"><div class="n">02</div><h3>Name the shelf</h3><p>Where it sells and who it sits next to tells a designer how loud, premium or plain the pack needs to be.</p></div>
+    <div class="b"><div class="n">03</div><h3>Brief everyone the same</h3><p>Send the identical brief to two or three studios so you can compare their thinking, not their guesswork.</p></div>
+  </div>
+</div></section>
+
+<section class="cta"><div class="wrap"><div class="label" style="color:#a8a596;margin-bottom:18px">Next step</div>
+<h2>Find your packaging <span class="it">designer.</span></h2>
+<p>Browse the independent directory, get matched to fitting studios, or start with an expert read of your current pack.</p>
+<a class="btn" href="get-matched.html">Get matched</a> <a class="btn gh" href="request-a-review.html">Request a Review</a></div></section>
+
+<footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="guides.html">Resources</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a></div></footer>
+
+<script>
+var step=1, TOTAL=3, C=2*Math.PI*19;
+var fields=[
+ {id:'b_name',k:'Brand / product'},{id:'b_cat',k:'Category'},{id:'b_what',k:'The product'},
+ {id:'b_diff',k:'What makes it different'},{id:'b_who',k:'Audience'},{id:'b_where',k:'Where it sells'},
+ {id:'b_comp',k:'Competitors'},{id:'b_scope',k:'Scope needed'},{id:'b_sku',k:'Number of SKUs'},
+ {id:'b_time',k:'Timeline'},{id:'b_budget',k:'Budget band'},{id:'b_must',k:'Must-haves'}
+];
+function v(i){var e=document.getElementById(i);return e?(e.value||'').trim():'';}
+function show(){
+  document.querySelectorAll('.step').forEach(function(s){s.classList.toggle('on', +s.dataset.step===step);});
+  document.querySelectorAll('.stepper .st').forEach(function(s){var n=+s.dataset.s;s.classList.toggle('on',n===step);s.classList.toggle('done',n<step);});
+  document.getElementById('pbar').style.width=(step/TOTAL*100)+'%';
+  document.getElementById('prev').disabled=(step===1);
+  document.getElementById('next').textContent=(step===TOTAL?'Review brief':'Next step');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function go(d){step=Math.min(TOTAL,Math.max(1,step+d));show();}
+function upd(){
+  var doc=document.getElementById('doc');
+  var name=v('b_name')||'Your brief';
+  var cat=v('b_cat');
+  var h='<div class="dt">'+esc(name)+'</div><div class="dcat">'+esc(cat)+' packaging brief</div>';
+  fields.forEach(function(f){
+    if(f.id==='b_name'||f.id==='b_cat')return;
+    var val=v(f.id);
+    h+='<div class="frow"><div class="fk">'+f.k+'</div><div class="fv'+(val?'':' empty')+'">'+(val?esc(val):'Not added yet')+'</div></div>';
+  });
+  doc.innerHTML=h;
+  var filled=fields.filter(function(f){return v(f.id);}).length;
+  var pc=Math.round(filled/fields.length*100);
+  document.getElementById('pct').textContent=pc+'%';
+  document.getElementById('ring').style.strokeDashoffset=C*(1-pc/100);
+}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');}
+function brief(){
+  var t="PACKAGING DESIGN BRIEF\n\n";
+  t+="Brand / product: "+(v('b_name')||'-')+"\n";
+  t+="Category: "+v('b_cat')+"\n";
+  t+="The product: "+(v('b_what')||'-')+"\n";
+  t+="What makes it different: "+(v('b_diff')||'-')+"\n\n";
+  t+="Audience: "+(v('b_who')||'-')+"\n";
+  t+="Where it sells: "+(v('b_where')||'-')+"\n";
+  t+="Competitors: "+(v('b_comp')||'-')+"\n\n";
+  t+="Scope needed: "+v('b_scope')+"\n";
+  t+="Number of SKUs: "+(v('b_sku')||'-')+"\n";
+  t+="Timeline: "+(v('b_time')||'-')+"\n";
+  t+="Budget band: "+v('b_budget')+"\n";
+  t+="Must-haves: "+(v('b_must')||'-')+"\n";
+  return t;
+}
+function flash(m){var c=document.getElementById('copied');c.textContent=m;setTimeout(function(){c.textContent='';},2200);}
+function copyb(){var t=brief();if(navigator.clipboard){navigator.clipboard.writeText(t);flash('Copied to clipboard');}}
+function dl(){var b=new Blob([brief()],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='packaging-brief.txt';a.click();flash('Downloaded');}
+upd();show();
+</script>
+<style>
+header{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+header.nav-hidden{transform:translateY(-100%)}
+#toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent,#2c45c9);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;box-shadow:0 10px 26px -8px rgba(20,20,15,.45)}
+#toTop.show{opacity:1;visibility:visible;transform:none}
+#toTop:hover{background:#16160f}#toTop svg{width:20px;height:20px}
+@media(max-width:680px){#toTop{right:16px;bottom:16px}}
+@media print{#toTop{display:none}}
+</style>
+<button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<script>
+(function(){var h=document.querySelector('header'),btn=document.getElementById('toTop'),last=window.pageYOffset||0,tick=false;
+function on(){var y=window.pageYOffset||0;
+ if(btn){btn.classList.toggle('show',y>500);}
+ if(h){if(y>last&&y>140){h.classList.add('nav-hidden');}else{h.classList.remove('nav-hidden');}}
+ last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});on();})();
+</script>
+<style>.nav-r a.m.cur{color:var(--accent)!important;font-weight:600}</style><script id="navcur">(function(){var here=(location.pathname.split("/").pop()||"index.html");var RES=["guides.html","packaging-design-cost.html","brief-builder.html","get-matched.html","retail-readiness-checklist.html","glossary.html","case-studies.html","supplement-packaging-design.html","compliance-checker.html","supermarket-map.html","packaging-marks-symbols.html"];var studio=location.pathname.indexOf("/studios/")>-1;document.querySelectorAll(".nav-r a.m").forEach(function(a){var hn=(a.getAttribute("href")||"").split("/").pop();var on=false;if(hn===here)on=true;if((here==="find-a-packaging-designer.html"||studio)&&hn==="find-a-packaging-designer.html")on=true;if(RES.indexOf(here)>-1&&hn==="guides.html")on=true;if(on)a.classList.add("cur");});})();</script></body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- Tool page system: split hero + progress ring + category cards. Sen, blueprint blue, no em dashes. -->
+<html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Retail-Readiness Checklist for Packaging | PackagingDesigner.com.au</title>
+<meta name="description" content="A free interactive checklist to make sure your product packaging is ready for shelf and retailer pitches.">
+<meta name="theme-color" content="#f3f2ee">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;500;600;700;800&family=Bitcount+Prop+Single&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#f3f2ee;--paper:#fafaf7;--ink:#16160f;--ink2:#3a3a32;--mut:#8c897e;--line:#e0ded6;--accent:#2c45c9;--display:"Sen",sans-serif;--sans:"Sen",-apple-system,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);background:var(--bone);color:var(--ink);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 44px}@media(max-width:680px){.wrap{padding:0 22px}}
+a{color:inherit;text-decoration:none}.it{color:var(--accent)}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--mut)}
+header{position:sticky;top:0;z-index:40;background:rgba(243,242,238,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.wm{font-family:var(--display);font-weight:800;font-size:22px}.wm .d{color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:22px}.nav-r a.m{font-size:14px;color:var(--ink2)}.nav-r a.m:hover{color:var(--ink)}
+.nav-r .cta{font-size:14px;font-weight:600;border:1px solid var(--ink);background:transparent;color:var(--ink);padding:10px 18px;border-radius:1px;transition:.2s}.nav-r .cta:hover{background:var(--ink);color:var(--bone)}
+@media(max-width:900px){.nav-r a.m{display:none}}
+.crumb{padding:26px 0 0;font-size:13px;color:var(--mut)}.crumb a{color:var(--mut)}
+/* split hero */
+.thero{display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:center;padding:40px 0 56px;border-bottom:1px solid var(--line)}
+@media(max-width:900px){.thero{grid-template-columns:1fr;gap:36px}}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,82px);letter-spacing:-.03em;line-height:.98;margin:14px 0 20px;max-width:15ch}
+.stand{font-size:clamp(17px,1.7vw,21px);color:var(--ink2);max-width:46ch;margin:0 0 24px}
+.tactions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bone);font-family:var(--sans);font-weight:600;font-size:14px;padding:13px 22px;border-radius:1px;cursor:pointer;border:0}.btn:hover{background:var(--accent)}
+.btn.gh{background:transparent;border:1px solid var(--ink);color:var(--ink)}.btn.gh:hover{background:var(--ink);color:var(--bone)}
+/* progress dial */
+.dial{position:relative;width:260px;max-width:100%;flex:none}
+.dial .ringwrap{position:relative;aspect-ratio:1/1;background:var(--paper);border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:30px 30px}
+.dial svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.dial .track{fill:none;stroke:var(--line);stroke-width:10}
+.dial .bar{fill:none;stroke:var(--accent);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .6s cubic-bezier(.2,.7,.2,1)}
+.dial .ctr{text-align:center;z-index:1}
+.dial .pct{font-family:"Bitcount Prop Single",var(--display);font-weight:700;font-size:64px;line-height:1;letter-spacing:-.03em}
+.dial .pct sub{font-size:24px;font-weight:700;vertical-align:super;margin-left:2px}
+.dialwrap{display:flex;align-items:center;justify-content:center;gap:30px}
+.dialchar{width:clamp(180px,20vw,260px);height:auto;flex:none}
+@media(max-width:560px){.dialwrap{flex-direction:column;gap:20px}}
+.dial .cnt{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-top:8px}
+.dial.done .bar{stroke:var(--accent)}
+.dial .badge{position:absolute;left:50%;bottom:-14px;transform:translateX(-50%) scale(.6);opacity:0;transition:.4s cubic-bezier(.2,.7,.2,1);background:var(--accent);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:8px 16px;border-radius:40px;white-space:nowrap}
+.dial.done .badge{opacity:1;transform:translateX(-50%) scale(1)}
+/* checklist cards */
+section{padding:64px 0}
+.clgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:780px){.clgrid{grid-template-columns:1fr}}
+.ccard{border:1px solid var(--line);background:var(--paper);border-radius:5px;padding:12px 26px 18px;transition:border-color .25s}
+.ccard:hover{border-color:var(--ink2)}
+.cch{display:flex;align-items:center;justify-content:space-between;padding:16px 0 6px}
+.cch h3{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;margin:0}
+.cch .num{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--mut);background:var(--bone);border:1px solid var(--line);border-radius:40px;padding:4px 11px;transition:.25s}
+.ccard.full .cch .num{background:var(--accent);border-color:var(--accent);color:#fff}
+.opt{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);cursor:pointer}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .bx{width:24px;height:24px;border:1.5px solid var(--ink2);border-radius:7px;flex:none;display:grid;place-items:center;transition:.2s;margin-top:1px}
+.opt input:checked + .bx{background:var(--accent);border-color:var(--accent)}
+.opt .bx svg{width:13px;height:13px;opacity:0;transform:scale(.5);transition:.2s}
+.opt input:checked + .bx svg{opacity:1;transform:scale(1)}
+.opt .tx{font-size:15.5px;line-height:1.5;color:var(--ink);transition:color .2s}
+.opt input:checked ~ .tx{color:var(--mut)}
+/* cta */
+.cta{background:var(--ink);color:var(--bone);text-align:center;padding:100px 0}
+.cta .label{color:#9a978b}.cta h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4.4vw,56px);letter-spacing:-.03em;color:#fff;margin:14px auto 22px;max-width:18ch}.cta h2 .it{color:#5b86ff}
+.cta p{color:rgba(243,242,238,.72);max-width:46ch;margin:0 auto 28px}
+.cta .btn{background:var(--bone);color:var(--ink)}.cta .btn:hover{background:#fff}
+.cta .btn.gh{background:transparent;border:1px solid rgba(243,242,238,.4);color:var(--bone)}
+footer{padding:50px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}footer a{color:var(--ink2)}footer a:hover{color:var(--ink)}
+</style><style>.wm{display:inline-flex;align-items:center;gap:9px}.wm .wmi{height:26px;width:auto;flex:none;display:block}</style><link rel="canonical" href="https://packagingdesigner.com.au/retail-readiness-checklist.html"><meta property="og:type" content="website"><meta property="og:site_name" content="PackagingDesigner.com.au"><meta property="og:locale" content="en_AU"><meta property="og:title" content="Retail-Readiness Checklist for Packaging | PackagingDesigner.com.au"><meta property="og:description" content="A free interactive checklist to make sure your product packaging is ready for shelf and retailer pitches."><meta property="og:url" content="https://packagingdesigner.com.au/retail-readiness-checklist.html"><meta property="og:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Retail-Readiness Checklist for Packaging | PackagingDesigner.com.au"><meta name="twitter:description" content="A free interactive checklist to make sure your product packaging is ready for shelf and retailer pitches."><meta name="twitter:image" content="https://packagingdesigner.com.au/assets/seo/og-default.png"><link rel="icon" href="/assets/seo/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/seo/favicon-32.png" sizes="32x32" type="image/png"><link rel="apple-touch-icon" href="/assets/seo/apple-touch-icon.png"><meta name="theme-color" content="#2c45c9"></head><body>
+<header><div class="wrap"><a class="wm" href="index.html"><img class="wmi" src="assets/icons/packaging-designer-finder/packaging-designer-finder-logo.svg" alt=""><span class="wmt">Packaging Designer<span class="d"> Finder</span></span></a>
+<nav class="nav-r"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m" href="insights.html">Insights</a><a class="m" href="index.html#review">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header><style>
+.subnav{position:fixed;left:0;right:0;top:74px;z-index:25;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-170%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 10px 22px -16px rgba(20,20,15,.4)}
+.subnav.show{transform:translateY(0)}
+.subnav .in{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;gap:4px;overflow-x:auto;height:46px;align-items:center;scrollbar-width:none}
+.subnav .in::-webkit-scrollbar{display:none}
+.subnav a{flex:none;font-size:13px;font-weight:500;color:var(--ink2);padding:6px 13px;border-radius:99px;white-space:nowrap;transition:.15s;margin:0}
+.subnav a:hover{background:var(--bone);color:var(--ink)}
+.subnav a.cur{background:var(--accent);color:#fff}
+@media(max-width:680px){.subnav .in{padding:0 16px}}
+</style>
+<nav class="subnav" id="subnav" aria-label="Resources"><div class="in"><a href="guides.html">Resources</a><a href="insights.html">Insights</a><a href="packaging-design-cost.html">What it costs</a><a href="brief-builder.html">Brief builder</a><a href="get-matched.html">Get matched</a><a href="packaging-formats-substrates.html">Formats</a><a href="packaging-marks-symbols.html">Marks &amp; symbols</a><a href="compliance-checker.html">Compliance</a><a href="retail-readiness-checklist.html">Retail readiness</a><a href="supplement-packaging-design.html">Supplements</a><a href="supermarket-map.html">Aisle map</a><a href="case-studies.html">Case studies</a><a href="glossary.html">Glossary</a></div></nav>
+<script>
+(function(){var sn=document.getElementById('subnav');if(!sn)return;var last=window.pageYOffset||0,tick=false;
+var here=(location.pathname.split('/').pop()||'');
+sn.querySelectorAll('a').forEach(function(a){if(a.getAttribute('href')===here)a.classList.add('cur');});
+function on(){var y=window.pageYOffset||0;if(y<last-2&&y>170){sn.classList.add('show');}else if(y>last+2||y<=120){sn.classList.remove('show');}last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});})();
+</script>
+
+<div class="wrap"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="guides.html">Resources</a> &nbsp;/&nbsp; Retail-readiness checklist</div></div>
+
+<div class="wrap"><div class="thero">
+  <div>
+    <div class="label">Interactive checklist</div>
+    <h1>Is your product ready for the <span class="it">shelf?</span></h1>
+    <p class="stand">Seventeen checks the best studios run before a product launches or pitches a retailer. Tick them off and watch your score climb.</p>
+    <div class="tactions"><button class="btn gh" onclick="resetAll()">Reset</button><button class="btn gh" onclick="window.print()">Print</button></div>
+  </div>
+  <div class="dialwrap"><img class="dialchar" src="assets/icons/resources/retail-ready.svg" alt="" loading="lazy"><div class="dial" id="dial">
+    <div class="ringwrap">
+      <svg viewBox="0 0 200 200"><circle class="track" cx="100" cy="100" r="86"/><circle class="bar" id="bar" cx="100" cy="100" r="86"/></svg>
+      <div class="ctr"><div class="pct" id="pct">0<sub>%</sub></div><div class="cnt" id="cnt">0 of 17 done</div></div>
+    </div>
+    <div class="badge">Shelf-ready ✓</div>
+  </div></div>
+</div></div>
+
+<section><div class="wrap">
+  <div class="clgrid" id="clgrid">
+    <div class="ccard"><div class="cch"><h3>Brand &amp; positioning</h3><span class="num">0/3</span></div>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Clear positioning: who it is for and why they would choose it</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">A distinctive brand block that is recognisable at a glance</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">The product descriptor is obvious in under two seconds</span></label>
+    </div>
+    <div class="ccard"><div class="cch"><h3>Design</h3><span class="num">0/4</span></div>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Front-of-pack hierarchy is ordered and uncluttered</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Works at thumbnail size (e-commerce) and at arm's length</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">A consistent system across every SKU and variant</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Appetite or quality cues match the price you are asking</span></label>
+    </div>
+    <div class="ccard"><div class="cch"><h3>Compliance</h3><span class="num">0/4</span></div>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Correct classification confirmed (e.g. TGA vs FSANZ)</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">All mandatory information present and legible</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Claims are permitted and substantiated</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Barcode, batch, expiry and country of origin where required</span></label>
+    </div>
+    <div class="ccard"><div class="cch"><h3>Production</h3><span class="num">0/3</span></div>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Print-ready artwork to the printer's specification</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Dielines and substrate confirmed</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">A proof signed off before the run</span></label>
+    </div>
+    <div class="ccard"><div class="cch"><h3>Retail</h3><span class="num">0/3</span></div>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Meets your target retailer's pack and listing requirements</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Shelf-ready or case format considered if needed</span></label>
+      <label class="opt"><input type="checkbox"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5 5.5 11 12 3"/></svg></span><span class="tx">Tested against competitors in a real shelf block</span></label>
+    </div>
+    <div class="ccard" style="display:flex;flex-direction:column;justify-content:center;background:var(--ink);border-color:var(--ink);color:var(--bone)">
+      <div class="label" style="color:#9a978b">When you are stuck</div>
+      <h3 style="color:#fff;font-size:24px;margin:10px 0 10px;font-family:var(--display);font-weight:700;letter-spacing:-.01em">Any boxes you can't tick?</h3>
+      <p style="color:rgba(243,242,238,.72);font-size:15px;margin:0 0 18px">That is exactly what a Packaging Performance Review surfaces, and what the right studio fixes.</p>
+      <a class="btn" style="background:var(--bone);color:var(--ink);align-self:flex-start" href="request-a-review.html">Request a Review</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <div class="label">Next step</div>
+  <h2>Find your packaging <span class="it">designer.</span></h2>
+  <p>Browse the independent directory of Australian studios, or start with an expert read of your current pack.</p>
+  <a class="btn" href="find-a-packaging-designer.html">Browse the directory</a> <a class="btn gh" href="request-a-review.html">Request a Review</a>
+</div></section>
+
+<footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="guides.html">Resources</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a></div></footer>
+
+<script>
+const bar=document.getElementById('bar'),C=2*Math.PI*86;bar.style.strokeDasharray=C;bar.style.strokeDashoffset=C;
+const all=[...document.querySelectorAll('#clgrid .ccard .opt input')];
+function upd(){
+  const n=all.filter(x=>x.checked).length,t=all.length,f=n/t;
+  bar.style.strokeDashoffset=C*(1-f);
+  document.getElementById('pct').innerHTML=Math.round(f*100)+'<sub>%</sub>';
+  document.getElementById('cnt').textContent=n+' of '+t+' done';
+  document.getElementById('dial').classList.toggle('done',n===t);
+  document.querySelectorAll('#clgrid .ccard').forEach(card=>{
+    const ins=[...card.querySelectorAll('.opt input')];if(!ins.length)return;
+    const c=ins.filter(x=>x.checked).length;const num=card.querySelector('.num');
+    if(num)num.textContent=c+'/'+ins.length;card.classList.toggle('full',c===ins.length);
+  });
+}
+all.forEach(x=>x.addEventListener('change',upd));
+function resetAll(){all.forEach(x=>x.checked=false);upd();}
+upd();
+</script>
+<style>
+header{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+header.nav-hidden{transform:translateY(-100%)}
+#toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent,#2c45c9);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;box-shadow:0 10px 26px -8px rgba(20,20,15,.45)}
+#toTop.show{opacity:1;visibility:visible;transform:none}
+#toTop:hover{background:#16160f}#toTop svg{width:20px;height:20px}
+@media(max-width:680px){#toTop{right:16px;bottom:16px}}
+@media print{#toTop{display:none}}
+</style>
+<button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<script>
+(function(){var h=document.querySelector('header'),btn=document.getElementById('toTop'),last=window.pageYOffset||0,tick=false;
+function on(){var y=window.pageYOffset||0;
+ if(btn){btn.classList.toggle('show',y>500);}
+ if(h){if(y>last&&y>140){h.classList.add('nav-hidden');}else{h.classList.remove('nav-hidden');}}
+ last=y<=0?0:y;tick=false;}
+window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);tick=true;}},{passive:true});on();})();
+</script>
+<style>.nav-r a.m.cur{color:var(--accent)!important;font-weight:600}</style><script id="navcur">(function(){var here=(location.pathname.split("/").pop()||"index.html");var RES=["guides.html","packaging-design-cost.html","brief-builder.html","get-matched.html","retail-readiness-checklist.html","glossary.html","case-studies.html","supplement-packaging-design.html","compliance-checker.html","supermarket-map.html","packaging-marks-symbols.html"];var studio=location.pathname.indexOf("/studios/")>-1;document.querySelectorAll(".nav-r a.m").forEach(function(a){var hn=(a.getAttribute("href")||"").split("/").pop();var on=false;if(hn===here)on=true;if((here==="find-a-packaging-designer.html"||studio)&&hn==="find-a-packaging-designer.html")on=true;if(RES.indexOf(here)>-1&&hn==="guides.html")on=true;if(on)a.classList.add("cur");});})();</script></body></html>
