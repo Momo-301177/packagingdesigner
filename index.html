@@ -567,17 +567,23 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
 </script>
 <style id="mhome">
 @media(max-width:760px){
- .hero{min-height:auto;padding:30px 0 44px;overflow:hidden}
- .stage{display:none}
+ html,body{overflow-x:clip}
+ .hero{min-height:80vh;padding:34px 0 30px}
+ .stage{display:block;pointer-events:none}
+ .stage model-viewer{pointer-events:none!important}
+ .stage .form{display:none!important}
+ .stage .form:nth-child(1){display:block!important;width:46%!important;top:0!important;right:-2%!important;left:auto!important;bottom:auto!important}
+ .stage .form:nth-child(2){display:block!important;width:62%!important;bottom:2%!important;left:-10%!important;top:auto!important;right:auto!important;opacity:.92}
+ .stage .form:nth-child(3){display:block!important;width:36%!important;top:30%!important;right:-4%!important;left:auto!important;bottom:auto!important}
  .scrollnote{display:none}
- section{padding:60px 0;overflow:hidden}
+ .sform{display:none!important}
+ section{padding:60px 0}
  .stats{padding:58px 0}
  .headart{align-items:center!important;width:100%}
  .headart img{width:210px!important;margin:0 auto}
  .premgrid{justify-content:center}
  .premart{margin:10px auto 0}
  .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}
- .sform{display:block!important;width:122px!important;opacity:.55;z-index:1;pointer-events:none!important}
  .partner{display:none}
  .paccord{display:block}
 }
@@ -601,4 +607,5 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
  .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
 }
 </style>
+<style id="mwrap">@media(max-width:680px){body .wrap{padding-left:24px;padding-right:24px}}</style>
 </body></html>

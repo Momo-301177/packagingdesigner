@@ -231,7 +231,15 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 <p>The studios in our directory build barcodes, recycling labels and mandatory marks into artwork, not after it. Find one, or start with an expert read of your pack.</p>
 <a class="btn" href="find-a-packaging-designer.html">Find a designer</a> <a class="btn gh" href="request-a-review.html">Request a Review</a></div></section>
 
-<footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="guides.html">Resources</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a></div></footer>
+<footer><div class="wrap">
+  <div class="fcols">
+    <div><div class="h">Find</div><a href="find-a-packaging-designer.html">Directory</a><a href="get-matched.html">Get matched</a></div>
+    <div><div class="h">Learn</div><a href="guides.html">Resources</a><a href="packaging-formats-substrates.html">Formats &amp; substrates</a><a href="packaging-design-cost.html">Costs</a></div>
+    <div><div class="h">Tools</div><a href="brief-builder.html">Brief builder</a><a href="compliance-checker.html">Compliance check</a><a href="supermarket-map.html">Aisle map</a></div>
+    <div><div class="h">About</div><a href="policy.html">About</a><a href="policy.html">Editorial policy</a><a href="index.html#review">The Review</a></div>
+  </div>
+  © 2026 PackagingDesigner.com.au · Independent resource · <a href="policy.html">Editorial &amp; disclosure policy</a>
+</div></footer>
 <style>
 header{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
 header.nav-hidden{transform:translateY(-100%)}
@@ -322,5 +330,12 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
  .acts{flex-direction:column;align-items:stretch}
  .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
 }
+</style>
+<style id="mwrap">@media(max-width:680px){body .wrap{padding-left:24px;padding-right:24px}}</style>
+<style id="mfoot">
+footer .fcols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:30px}
+footer .fcols a{display:block;font-size:14px;color:var(--ink2);padding:5px 0}
+footer .fcols .h{font-family:var(--display);font-weight:600;color:var(--ink);margin-bottom:8px}
+@media(max-width:680px){footer .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}}
 </style>
 </body></html>

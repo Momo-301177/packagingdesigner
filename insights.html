@@ -90,7 +90,15 @@ footer{padding:46px 0;border-top:1px solid var(--line);font-size:13px;color:var(
 
 </div></div>
 
-<footer><div class="wrap">© 2026 PackagingDesigner.com.au · Independent resource &nbsp;·&nbsp; <a href="policy.html">Editorial &amp; disclosure policy</a> &nbsp;·&nbsp; <a href="find-a-packaging-designer.html">Directory</a> &nbsp;·&nbsp; <a href="index.html">Home</a></div></footer>
+<footer><div class="wrap">
+  <div class="fcols">
+    <div><div class="h">Find</div><a href="find-a-packaging-designer.html">Directory</a><a href="get-matched.html">Get matched</a></div>
+    <div><div class="h">Learn</div><a href="guides.html">Resources</a><a href="packaging-formats-substrates.html">Formats &amp; substrates</a><a href="packaging-design-cost.html">Costs</a></div>
+    <div><div class="h">Tools</div><a href="brief-builder.html">Brief builder</a><a href="compliance-checker.html">Compliance check</a><a href="supermarket-map.html">Aisle map</a></div>
+    <div><div class="h">About</div><a href="policy.html">About</a><a href="policy.html">Editorial policy</a><a href="index.html#review">The Review</a></div>
+  </div>
+  © 2026 PackagingDesigner.com.au · Independent resource · <a href="policy.html">Editorial &amp; disclosure policy</a>
+</div></footer>
 <button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <script>
 var cards=[].slice.call(document.querySelectorAll('#grid .acard')),fbar=document.getElementById('fbar');
@@ -134,5 +142,12 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
  .acts{flex-direction:column;align-items:stretch}
  .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
 }
+</style>
+<style id="mwrap">@media(max-width:680px){body .wrap{padding-left:24px;padding-right:24px}}</style>
+<style id="mfoot">
+footer .fcols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:30px}
+footer .fcols a{display:block;font-size:14px;color:var(--ink2);padding:5px 0}
+footer .fcols .h{font-family:var(--display);font-weight:600;color:var(--ink);margin-bottom:8px}
+@media(max-width:680px){footer .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}}
 </style>
 </body></html>
