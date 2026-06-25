@@ -56,9 +56,10 @@
     document.documentElement.classList.add('customcursor');
     document.addEventListener('mouseover',function(e){
       if(e.target.closest('input,textarea,select,[contenteditable]')){mode='off';}
+      else if(e.target.closest('.cstage')){mode='eye';eye.classList.remove('lg');}
       else{
         var lbl=e.target.closest('[data-cursor]');
-        var btn=e.target.closest('button,.btn,.primary,.ghost,.cta,.send,input[type=submit],input[type=button]');
+        var btn=e.target.closest('button,.btn,.primary,.ghost,.cta,.send,.nav-r a,.subnav a,input[type=submit],input[type=button]');
         if(lbl){mode='pill';pill.textContent=lbl.getAttribute('data-cursor');}
         else if(btn){mode='pill';pill.textContent=(btn.classList.contains('send')||/submit/i.test(btn.type||''))?'Send':'Open';}
         else{mode='eye';eye.classList.toggle('lg',!!e.target.closest('a'));}
