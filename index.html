@@ -98,7 +98,7 @@ p{margin:0 0 20px;color:var(--ink2)}
 .toggle button{font-family:var(--sans);font-size:13px;font-weight:600;padding:10px 22px;background:transparent;border:0;cursor:pointer;color:var(--ink);letter-spacing:.02em}
 .toggle button.on{background:var(--ink);color:var(--bone)}
 /* formats rail */
-.rail{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--ink);margin-top:10px}
+.rail{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:1px solid var(--ink);margin-top:10px}
 @media(max-width:760px){.rail{grid-template-columns:repeat(2,1fr)}}
 .rcell{padding:26px 18px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);transition:.3s;display:flex;flex-direction:column;gap:14px}
 .rcell:hover{background:var(--accent)}.rcell:hover .rn{color:#fff}.rcell:hover .ic{color:#fff}
@@ -279,6 +279,7 @@ footer{padding:60px 0;border-top:1px solid var(--line);font-size:13px;color:var(
       <a class="rcell" href="packaging-formats-substrates.html"><span class="ic"><img src="assets/icons/formats-substrates/glass-jars.svg" alt="" loading="lazy"></span><span class="rn">Glass &amp; bottles</span></a>
       <a class="rcell" href="packaging-formats-substrates.html"><span class="ic"><img src="assets/icons/formats-substrates/metal-tins.svg" alt="" loading="lazy"></span><span class="rn">Tins &amp; cans</span></a>
       <a class="rcell" href="packaging-formats-substrates.html"><span class="ic"><img src="assets/icons/formats-substrates/tubes.svg" alt="" loading="lazy"></span><span class="rn">Tubes</span></a>
+      <a class="rcell" href="packaging-formats-substrates.html"><span class="ic"><img src="assets/icons/formats-substrates/labels-shrink.svg" alt="" loading="lazy"></span><span class="rn">Labels</span></a>
     </div>
   </div>
 </section>
@@ -585,7 +586,12 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
  .premart{margin:10px auto 0}
  .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}
  .partner{display:none}
- .paccord{display:block}
+ .paccord{display:block!important}
+ .dgrid{grid-template-columns:1fr 1fr}
+ .dcell{min-height:0;padding:16px 14px}
+ .dcell .dn{font-size:16px}
+ .dcell .dc{font-size:12px;margin-top:3px}
+ .dcell .dt{font-size:11px;margin-top:10px}
 }
 .paccord{display:none;border-top:1px solid var(--line);margin-top:4px}
 .paccord details{border-bottom:1px solid var(--line)}
@@ -607,5 +613,5 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
  .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
 }
 </style>
-<style id="mwrap">@media(max-width:680px){body .wrap{padding-left:24px;padding-right:24px}}</style>
+<style id="mwrap">@media(max-width:680px){body .wrap,body .narrow{padding-left:24px;padding-right:24px}}</style>
 </body></html>

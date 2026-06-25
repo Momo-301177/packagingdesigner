@@ -101,13 +101,10 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
   <div class="prev">
     <div class="kk">Your match</div>
     <h2 id="ph">Studios for your project</h2>
-    <p id="pp">Choose your category, city and stage and we will tailor a shortlisting path for you.</p>
-    <ol class="steps">
-      <li>Open the directory filtered to your sector and city</li>
-      <li>Shortlist two or three studios whose work fits</li>
-      <li>Send them the same brief, or start with an expert Review</li>
-    </ol>
-    <div class="pbtns"><a class="btn" id="pbtn" href="find-a-packaging-designer.html">Browse matching studios</a><a class="btn gh" href="brief-builder.html">Build a brief</a></div>
+    <p id="pp">Choose your category, city and stage and we will show the studios that fit.</p>
+    <div id="mres" class="mres"></div>
+    <p id="mnote" class="mnote"></p>
+    <div class="pbtns"><a class="btn" id="pbtn" href="find-a-packaging-designer.html">See all in the directory</a><a class="btn gh" href="request-a-review.html">Start with a Review</a></div>
   </div>
 </div></div>
 
@@ -129,13 +126,26 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 </div></footer>
 
 <script>
+var MSTUDIOS=[{n:"3 Deep",u:"studios/3-deep.html",c:"Melbourne",s:["Luxury"]},{n:"B! Brand Design",u:"studios/b-brand-design.html",c:"Melbourne",s:["FMCG"]},{n:"Bellman Branding",u:"studios/bellman-branding.html",c:"Melbourne",s:["Packaging"]},{n:"Boldinc",u:"studios/boldinc.html",c:"Sydney",s:["FMCG","Food &amp; Bev","Drinks","Packaging","Strategy"]},{n:"Boxer &amp; Co",u:"studios/boxer-co.html",c:"Sydney",s:["FMCG","Retail","Packaging"]},{n:"Brandwell",u:"studios/brandwell.html",c:"Melbourne",s:["Packaging"]},{n:"Brandworks",u:"studios/brandworks.html",c:"National",s:["Packaging"]},{n:"Bulletproof",u:"studios/bulletproof.html",c:"National",s:["FMCG","Food &amp; Bev","Drinks","Packaging"]},{n:"Co-Partnership",u:"studios/co-partnership.html",c:"Sydney",s:["Drinks"]},{n:"Cowan",u:"studios/cowan.html",c:"Melbourne",s:["FMCG","Food &amp; Bev","Drinks","Beauty","Retail"]},{n:"Darling Brands",u:"studios/darling-brands.html",c:"National",s:["Packaging","Strategy"]},{n:"Davidson Branding",u:"studios/davidson-branding.html",c:"Melbourne",s:["FMCG","Food &amp; Bev","Beauty","Retail"]},{n:"Depot",u:"studios/depot.html",c:"Sydney",s:["Food &amp; Bev","Drinks","Beauty","Wellness"]},{n:"Fishfinger Creative",u:"studios/fishfinger-creative.html",c:"Sydney",s:["Packaging"]},{n:"Fluid Branding",u:"studios/fluid-branding.html",c:"Melbourne",s:["FMCG","Food &amp; Bev"]},{n:"Good Branding",u:"studios/good-branding.html",c:"Melbourne",s:["FMCG","Packaging"]},{n:"Morice &amp; Co",u:"studios/morice-and-co.html",c:"Melbourne",s:["FMCG","Food &amp; Bev","Beauty","Retail","Packaging","Strategy","Supplements","Pet"]},{n:"Motor Brand Design",u:"studios/motor-brand-design.html",c:"Melbourne",s:["FMCG","Retail"]},{n:"Our Revolution",u:"studios/our-revolution.html",c:"Sydney",s:["FMCG","Packaging","Strategy"]},{n:"Percept",u:"studios/percept.html",c:"Sydney",s:["Packaging","Strategy"]},{n:"PLUMM",u:"studios/plumm.html",c:"Melbourne",s:["Packaging"]},{n:"Point 3 Design",u:"studios/point-3-design.html",c:"Melbourne",s:["Packaging"]},{n:"Principals",u:"studios/principals.html",c:"Melbourne",s:["FMCG","Retail","Strategy"]},{n:"SGK",u:"studios/sgk.html",c:"National",s:["Packaging"]},{n:"Stranger &amp; Stranger",u:"studios/stranger-stranger.html",c:"International",s:["Drinks","Luxury","Packaging"]},{n:"Studio Round",u:"studios/studio-round.html",c:"Melbourne",s:["Retail","Packaging","Strategy"]},{n:"Voice Design",u:"studios/voice-design.html",c:"Adelaide",s:["Food &amp; Bev","Drinks","Packaging"]},{n:"Watts Design",u:"studios/watts-design.html",c:"Melbourne",s:["FMCG","Food &amp; Bev","Packaging"]},{n:"Graphic Design Australia",u:"studios/graphic-design-australia.html",c:"National",s:["FMCG","Food &amp; Bev","Beauty","Pet","Packaging","Strategy","Wellness"]},{n:"Juno Creative",u:"studios/juno-creative.html",c:"National",s:["FMCG","Food &amp; Bev","Packaging","Strategy","Retail"]},{n:"Studio Molasses",u:"studios/studio-molasses.html",c:"Sydney",s:["Drinks","FMCG","Food &amp; Bev","Packaging","Strategy"]},{n:"Studio Guild",u:"studios/studio-guild.html",c:"Melbourne",s:["Drinks","Food &amp; Bev","Packaging","Strategy"]},{n:"Dash Creative",u:"studios/dash-creative.html",c:"Melbourne",s:["Beauty","Drinks","FMCG","Packaging","Strategy","Retail"]},{n:"Relax Design",u:"studios/relax-design.html",c:"Sydney",s:["FMCG","Food &amp; Bev","Packaging","Strategy","Pet","Drinks"]},{n:"Made Somewhere",u:"studios/made-somewhere.html",c:"Sydney",s:["Beauty","FMCG","Food &amp; Bev","Packaging","Strategy","Drinks"]},{n:"Creaytive",u:"studios/creaytive.html",c:"Melbourne",s:["Packaging","FMCG","Food &amp; Bev"]}];
+var SECMAP={Supplements:["Supplements","Wellness"],Food:["Food &amp; Bev"],Beverage:["Drinks","Food &amp; Bev"],"Alcohol & spirits":["Drinks"],"Health & beauty":["Beauty","Wellness"],Pet:["Pet"],FMCG:["FMCG"]};
 function upd(){
-  var cat=document.getElementById('m_cat'),city=document.getElementById('m_city').value,st=document.getElementById('m_stage').value;
-  var ct=cat.selectedOptions[0].text;
+  var catSel=document.getElementById('m_cat');var catV=catSel.value;var ct=catSel.selectedOptions[0].text;
+  var city=document.getElementById('m_city').value;
   document.getElementById('ph').innerHTML='<b>'+ct+'</b> packaging studios'+(city?' in <b>'+city+'</b>':'');
-  var stage={'Launching a new product':'launching a new product','Refreshing existing packaging':'refreshing your packaging','Entering retail':'entering retail','Not sure yet':'figuring out next steps'}[st]||'';
-  document.getElementById('pp').textContent='For '+ct.toLowerCase()+(city?' in '+city:'')+', '+stage+': here is how to shortlist well.';
-  document.getElementById('pbtn').textContent='Browse '+ct+' studios';
+  var targets=SECMAP[catV]||[catV];
+  var matches=MSTUDIOS.filter(function(s){return s.s.some(function(x){return targets.indexOf(x)>-1;});});
+  function rank(s){if(!city)return 0;if(s.c===city)return 0;if(s.c==='National')return 1;return 2;}
+  matches.sort(function(a,b){return rank(a)-rank(b);});
+  var mi=matches.findIndex(function(s){return s.u.indexOf('morice-and-co')>-1;});
+  if(mi>-1&&matches.length>2){var m=matches.splice(mi,1)[0];matches.splice(2,0,m);}
+  var show=matches.slice(0,8);
+  document.getElementById('mres').innerHTML=show.map(function(s){
+    return '<a class="mcard" href="'+s.u+'"><span class="mn">'+s.n+'</span><span class="mc">'+s.c+'</span><span class="mt">'+s.s.slice(0,3).join(' · ')+'</span><span class="ma">&#8594;</span></a>';
+  }).join('')||'<p class="mnote">No exact matches yet, browse the full directory below.</p>';
+  document.getElementById('pp').textContent=show.length?('Studios that fit '+ct.toLowerCase()+(city?' in '+city:'')+'. Approach two or three with the same brief.'):'';
+  var more=matches.length-show.length;
+  document.getElementById('mnote').textContent=more>0?('Plus '+more+' more in the full directory.'):'';
+  document.getElementById('pbtn').textContent='See all '+ct+' studios';
 }
 upd();
 </script>
@@ -191,11 +201,21 @@ document.addEventListener('click',function(e){if(n.classList.contains('open')&&!
  .acts a,.acts .primary,.acts .ghost{width:100%;text-align:center;box-sizing:border-box}
 }
 </style>
-<style id="mwrap">@media(max-width:680px){body .wrap{padding-left:24px;padding-right:24px}}</style>
+<style id="mwrap">@media(max-width:680px){body .wrap,body .narrow{padding-left:24px;padding-right:24px}}</style>
 <style id="mfoot">
 footer .fcols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:30px}
 footer .fcols a{display:block;font-size:14px;color:var(--ink2);padding:5px 0}
 footer .fcols .h{font-family:var(--display);font-weight:600;color:var(--ink);margin-bottom:8px}
 @media(max-width:680px){footer .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}}
+</style>
+<style id="mmatch">
+.mres{margin:8px 0 2px;border-top:1px solid var(--line)}
+.mcard{position:relative;display:block;padding:14px 28px 14px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.mcard .mn{display:block;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;line-height:1.15}
+.mcard .mc{display:block;font-size:12.5px;color:var(--mut);margin-top:3px}
+.mcard .mt{display:block;font-size:12px;color:var(--ink2);margin-top:6px}
+.mcard .ma{position:absolute;right:2px;top:50%;transform:translateY(-50%);color:var(--mut);font-size:20px;transition:transform .2s}
+.mcard:hover .mn{color:var(--accent)}.mcard:hover .ma{transform:translateY(-50%) translateX(3px);color:var(--accent)}
+.mnote{font-size:12.5px;color:var(--mut);margin:12px 0 18px}
 </style>
 </body></html>
