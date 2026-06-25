@@ -32,10 +32,10 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,82px);let
 .sel select:focus{outline:none;border-color:var(--accent)}
 .sel:after{content:"";position:absolute;right:18px;top:50%;width:9px;height:9px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
 /* preview */
-.prev{position:sticky;top:96px;background:var(--ink);color:var(--bone);border-radius:6px;padding:36px;overflow:hidden}
-.prev .kk{color:#9a978b}
+.prev{position:sticky;top:96px;background:var(--accent);color:#fff;border-radius:6px;padding:36px;overflow:hidden}
+.prev .kk{color:rgba(255,255,255,.7)}
 .prev h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;line-height:1.08;margin:0 0 14px;color:#fff;min-height:2.1em}
-.prev h2 b{color:#5b86ff;font-weight:700}
+.prev h2 b{color:#fff;font-weight:700}
 .prev p{color:rgba(243,242,238,.74);font-size:15.5px;margin:0 0 26px}
 .steps{list-style:none;padding:0;margin:0 0 28px;counter-reset:s}
 .steps li{counter-increment:s;position:relative;padding:14px 0 14px 42px;border-top:1px solid rgba(243,242,238,.16);font-size:15px;color:rgba(243,242,238,.9)}
@@ -134,11 +134,11 @@ function upd(){
   document.getElementById('ph').innerHTML='<b>'+ct+'</b> packaging studios'+(city?' in <b>'+city+'</b>':'');
   var targets=SECMAP[catV]||[catV];
   var matches=MSTUDIOS.filter(function(s){return s.s.some(function(x){return targets.indexOf(x)>-1;});});
-  function rank(s){if(!city)return 0;if(s.c===city)return 0;if(s.c==='National')return 1;return 2;}
-  matches.sort(function(a,b){return rank(a)-rank(b);});
+  if(city){matches=matches.filter(function(s){return s.c===city||s.c==='National';});}
+  matches.sort(function(a,b){if(!city)return 0;var ra=a.c===city?0:1,rb=b.c===city?0:1;return ra-rb;});
   var mi=matches.findIndex(function(s){return s.u.indexOf('morice-and-co')>-1;});
   if(mi>-1&&matches.length>2){var m=matches.splice(mi,1)[0];matches.splice(2,0,m);}
-  var show=matches.slice(0,8);
+  var show=matches.slice(0,6);
   document.getElementById('mres').innerHTML=show.map(function(s){
     return '<a class="mcard" href="'+s.u+'"><span class="mn">'+s.n+'</span><span class="mc">'+s.c+'</span><span class="mt">'+s.s.slice(0,3).join(' · ')+'</span><span class="ma">&#8594;</span></a>';
   }).join('')||'<p class="mnote">No exact matches yet, browse the full directory below.</p>';
@@ -209,13 +209,13 @@ footer .fcols .h{font-family:var(--display);font-weight:600;color:var(--ink);mar
 @media(max-width:680px){footer .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}}
 </style>
 <style id="mmatch">
-.mres{margin:8px 0 2px;border-top:1px solid var(--line)}
-.mcard{position:relative;display:block;padding:14px 28px 14px 0;border-bottom:1px solid var(--line);color:var(--ink)}
-.mcard .mn{display:block;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;line-height:1.15}
-.mcard .mc{display:block;font-size:12.5px;color:var(--mut);margin-top:3px}
-.mcard .mt{display:block;font-size:12px;color:var(--ink2);margin-top:6px}
-.mcard .ma{position:absolute;right:2px;top:50%;transform:translateY(-50%);color:var(--mut);font-size:20px;transition:transform .2s}
-.mcard:hover .mn{color:var(--accent)}.mcard:hover .ma{transform:translateY(-50%) translateX(3px);color:var(--accent)}
-.mnote{font-size:12.5px;color:var(--mut);margin:12px 0 18px}
+.mres{margin:8px 0 2px;border-top:1px solid rgba(255,255,255,.22)}
+.mcard{position:relative;display:block;padding:13px 28px 13px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.mcard .mn{display:block;font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.01em;line-height:1.15;color:#fff}
+.mcard .mc{display:block;font-size:12px;color:rgba(255,255,255,.62);margin-top:2px}
+.mcard .mt{display:block;font-size:12px;color:rgba(255,255,255,.82);margin-top:5px}
+.mcard .ma{position:absolute;right:2px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.7);font-size:20px;transition:transform .2s}
+.mcard:hover .mn{text-decoration:underline}.mcard:hover .ma{transform:translateY(-50%) translateX(3px);color:#fff}
+.mnote{font-size:12.5px;color:rgba(255,255,255,.72);margin:12px 0 18px}
 </style>
 </body></html>
