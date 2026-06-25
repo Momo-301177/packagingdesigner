@@ -34,7 +34,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .form svg{display:block;width:100%;height:auto;overflow:visible}
 .form .shadow{fill:rgba(21,21,15,.06)}
 @keyframes floaty{0%,100%{transform:translateY(-12px)}50%{transform:translateY(12px)}}
-section>.wrap{position:relative;z-index:3}
+section>.wrap{position:relative;z-index:3;pointer-events:none}section>.wrap>*{pointer-events:auto}
 .sform{position:absolute;z-index:2;pointer-events:none}
 .sform .fl{animation:floaty 12s ease-in-out infinite;will-change:transform}
 .sform .mv{width:100%;aspect-ratio:1/1}
@@ -62,7 +62,7 @@ section{position:relative;padding:120px 0}
 .tint{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .dark{background:var(--ink);color:var(--bone)}.dark .label{color:#9a978b}.dark p{color:rgba(243,242,238,.74)}
 .stats{padding:96px 0}.stats .srow{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}@media(max-width:760px){.stats .srow{grid-template-columns:repeat(2,1fr);gap:46px 20px}}
-.stats .num{font-family:"Bitcount Prop Single",var(--display);font-weight:700;font-size:clamp(46px,7vw,92px);line-height:.95;letter-spacing:-.03em;color:#fff}
+.stats .num{font-family:"Bitcount Prop Single",var(--display);font-weight:700;font-size:clamp(46px,7vw,92px);line-height:.95;letter-spacing:-.03em;color:#5b86ff}
 .stats .lab{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9a978b;margin-top:12px}
 h2{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.4vw,74px);letter-spacing:-.03em;line-height:1.02;margin:14px 0 0;max-width:18ch}h2 .it{font-weight:inherit}
 p{margin:0 0 20px;color:var(--ink2)}
