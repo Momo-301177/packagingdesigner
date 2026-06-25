@@ -4,6 +4,31 @@
   var fine = mq && mq('(hover:hover) and (pointer:fine)').matches;
   var reduce = mq && mq('(prefers-reduced-motion: reduce)').matches;
   var AC='#2c45c9';
+  function pillLabel(el){
+    if(el.getAttribute&&el.getAttribute('data-cursor'))return el.getAttribute('data-cursor');
+    if(el.classList&&el.classList.contains('send'))return 'Send it';
+    var href=((el.getAttribute&&el.getAttribute('href'))||'').toLowerCase();
+    var t=((el.textContent||'')+'').toLowerCase();
+    function h(x){return href.indexOf(x)>-1;}
+    if(h('request-a-review')||t.indexOf('request a review')>-1)return "Let's go";
+    if(h('get-matched')||t.indexOf('matched')>-1)return 'Match me';
+    if(h('brief-builder')||t.indexOf('brief')>-1)return 'Build it';
+    if(h('find-a-packaging-designer')||t.indexOf('find a')>-1||t.indexOf('directory')>-1)return 'Find one';
+    if(h('packaging-design-cost')||t.indexOf('cost')>-1)return 'See the $';
+    if(h('insights')||t.indexOf('insight')>-1)return 'Read up';
+    if(h('packaging-formats')||t.indexOf('format')>-1)return 'Explore';
+    if(h('compliance'))return 'Check it';
+    if(h('supermarket-map')||t.indexOf('aisle')>-1)return 'Walk it';
+    if(h('case-stud')||t.indexOf('case stud')>-1)return 'See proof';
+    if(h('glossary'))return 'Look it up';
+    if(h('marks')||t.indexOf('mark')>-1)return 'Decode it';
+    if(h('retail-readiness')||t.indexOf('retail')>-1)return 'Get ready';
+    if(h('supplement')||t.indexOf('supplement')>-1)return 'Dig in';
+    if(h('guides')||t.indexOf('resource')>-1||t.indexOf('guide')>-1)return 'Learn';
+    if(h('#review')||t.indexOf('review')>-1)return 'Take a peek';
+    if(h('index')||t.indexOf('home')>-1)return 'Home';
+    return 'Have a look';
+  }
   var mx=innerWidth/2, my=innerHeight/2;
   addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;},{passive:true});
 
@@ -28,6 +53,9 @@
   /* ---------- data-cursor labels ---------- */
   document.querySelectorAll('.card,.dcell,.acard').forEach(function(e){if(!e.hasAttribute('data-cursor'))e.setAttribute('data-cursor','View');});
   document.querySelectorAll('model-viewer').forEach(function(e){if(e.closest('.cstage'))return;e.setAttribute('data-cursor','Drag to rotate');});
+  document.querySelectorAll('#cface button').forEach(function(e){e.setAttribute('data-cursor','Flip it');});
+  document.querySelectorAll('.chips button,.chips a,.chips [data-p]').forEach(function(e){e.setAttribute('data-cursor','Show me');});
+  document.querySelectorAll('.pbtn').forEach(function(e){e.setAttribute('data-cursor','Meet them');});
 
   /* ---------- live googly wordmark eyes (replace static logo img) ---------- */
   var welive=[];
@@ -59,9 +87,9 @@
       else if(e.target.closest('.cstage')){mode='eye';eye.classList.remove('lg');}
       else{
         var lbl=e.target.closest('[data-cursor]');
-        var btn=e.target.closest('button,.btn,.primary,.ghost,.cta,.send,.nav-r a,.subnav a,input[type=submit],input[type=button]');
+        var btn=e.target.closest('button,.btn,.primary,.ghost,.cta,.send,.nav-r a,.subnav a,footer a,input[type=submit],input[type=button]');
         if(lbl){mode='pill';pill.textContent=lbl.getAttribute('data-cursor');}
-        else if(btn){mode='pill';pill.textContent=(btn.classList.contains('send')||/submit/i.test(btn.type||''))?'Send':'Open';}
+        else if(btn){mode='pill';pill.textContent=pillLabel(btn);}
         else{mode='eye';eye.classList.toggle('lg',!!e.target.closest('a'));}
       }
       showCur();
