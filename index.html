@@ -322,7 +322,7 @@ footer{padding:60px 0;border-top:1px solid var(--line);font-size:13px;color:var(
 <section class="tint">
   <div class="wrap">
     <div class="head rv" style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px;margin-bottom:36px">
-      <div><div class="label">The directory</div><h2 style="margin-bottom:0">Australian <span class="it">packaging studios.</span></h2></div>
+      <div><div class="label">The directory</div><h2 style="margin-bottom:0">Australian <span class="it">packaging designers.</span></h2></div>
       <div class="headart"><img src="assets/icons/packaging-designer-homepage/the-directory.svg" alt="" loading="lazy"><a class="lnk" href="find-a-packaging-designer.html">Browse all 36 <span class="a">→</span></a></div>
     </div>
     <div class="dgrid rv" id="dgrid"></div>
@@ -463,6 +463,7 @@ const DET={
  'Studio Ongarato':{f:'find-a-packaging-designer.html',based:'Melbourne · Hong Kong · Dubai',est:'1993',sec:['Luxury','Strategy'],note:'Hospitality, property, arts & culture',bio:"Founded in Melbourne in 1993 by Fabio Ongarato and Ronnen Goren, Studio Ongarato is a culture-led design studio known for branding, wayfinding and placemaking across hospitality, property, arts and culture."}
 };
 const SZ={'Boxer & Co':'Large (10-20)','Cowan':'Global (20+)','Depot Creative':'Medium (5-10)','Morice & Co':'Boutique (1-5)','Watts Design':'Large (10-20)','Boldinc':'Large (10-20)','Voice':'Large (10-20)','Round':'Large (10-20)','Studio Ongarato':'Global (20+)'};
+var WEB={"boxer-co":"https://boxerandco.com.au/","cowan":"https://cowan.com/","depot":"https://www.wearedepot.com.au/","morice-and-co":"https://morice.co/","watts-design":"https://www.wattsdesign.com.au/","boldinc":"https://www.bold-inc.com/","voice-design":"https://voicedesign.net/","studio-round":"https://www.round.com.au/"};
 STUDIOS.forEach(s=>{const a=document.createElement('a');a.className='dcell';
   var d=DET[s[0]]||{};a.href=d.f||'find-a-packaging-designer.html';
   var rv=(s[4] && +s[4]>0);
@@ -477,8 +478,8 @@ STUDIOS.forEach(s=>{const a=document.createElement('a');a.className='dcell';
   if(d.note)facts+=fact('Notable',d.note);
   var bio=d.bio?'<div class="pbio">'+d.bio+'</div>':'';
   var tier=SZ[s[0]]?'<span class="ptier">'+SZ[s[0]]+'</span>':'';
-  var pop=document.createElement('div');pop.className='dpop';
-  pop.innerHTML='<div class="ph"><span>'+s[0]+'</span>'+tier+'</div>'+prev+bio+'<div class="pfacts">'+facts+'</div><a class="plink" href="'+(d.f||'find-a-packaging-designer.html')+'">View full profile &rarr;</a>';
+  var pop=document.createElement('div');pop.className='dpop';var _slug=(d.f||'').split('/').pop().replace('.html','');var _w=WEB[_slug];var wl=_w?'<a class="plink" style="margin-top:0;color:var(--ink2)" href="'+_w+'" target="_blank" rel="nofollow noopener" data-cursor="Let&#39;s go">Website &#8599;</a>':'';
+  pop.innerHTML='<div class="ph"><span>'+s[0]+'</span>'+tier+'</div>'+prev+bio+'<div class="pfacts">'+facts+'</div><div style="display:flex;gap:18px;align-items:center;margin-top:14px"><a class="plink" style="margin-top:0" href="'+(d.f||'find-a-packaging-designer.html')+'">View full profile &rarr;</a>'+wl+'</div>';
   a.appendChild(pop);
   a.addEventListener('mouseenter',function(){pop.classList.remove('fy');var r=a.getBoundingClientRect();var ph=pop.offsetHeight||320;if(r.top+ph+16>window.innerHeight&&r.top-ph>0)pop.classList.add('fy');});
   dgrid.appendChild(a);});

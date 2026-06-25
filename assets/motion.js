@@ -27,7 +27,7 @@
 
   /* ---------- data-cursor labels ---------- */
   document.querySelectorAll('.card,.dcell,.acard').forEach(function(e){if(!e.hasAttribute('data-cursor'))e.setAttribute('data-cursor','View');});
-  document.querySelectorAll('model-viewer').forEach(function(e){e.setAttribute('data-cursor','Drag to rotate');});
+  document.querySelectorAll('model-viewer').forEach(function(e){if(e.closest('.cstage'))return;e.setAttribute('data-cursor','Drag to rotate');});
 
   /* ---------- live googly wordmark eyes (replace static logo img) ---------- */
   var welive=[];
@@ -56,7 +56,13 @@
     document.documentElement.classList.add('customcursor');
     document.addEventListener('mouseover',function(e){
       if(e.target.closest('input,textarea,select,[contenteditable]')){mode='off';}
-      else{var lbl=e.target.closest('[data-cursor]'); if(lbl){mode='pill';pill.textContent=lbl.getAttribute('data-cursor');} else {mode='eye';eye.classList.toggle('lg',!!e.target.closest('a,button'));}}
+      else{
+        var lbl=e.target.closest('[data-cursor]');
+        var btn=e.target.closest('button,.btn,.primary,.ghost,.cta,.send,input[type=submit],input[type=button]');
+        if(lbl){mode='pill';pill.textContent=lbl.getAttribute('data-cursor');}
+        else if(btn){mode='pill';pill.textContent=(btn.classList.contains('send')||/submit/i.test(btn.type||''))?'Send':'Open';}
+        else{mode='eye';eye.classList.toggle('lg',!!e.target.closest('a'));}
+      }
       showCur();
     });
     document.addEventListener('mouseleave',function(){if(eye)eye.style.display='none';if(pill)pill.style.display='none';});

@@ -199,7 +199,7 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
     var pop=document.createElement('div');pop.className='pop';
     var bio=BIOS[key]?'<div class="pbio">'+BIOS[key]+'</div>':'<div class="pna">Studio summary coming soon.</div>';
     var tier=sz?'<span class="ptier">'+sz.l+'</span>':'';
-    pop.innerHTML='<div class="ph"><span>'+c.dataset.name+'</span>'+tier+'</div>'+revLine(key,'prev')+bio+'<div class="pfacts">'+facts+'</div><div class="plinks"><a class="plink" href="'+c.getAttribute('href')+'">View full profile <span class="a">&rarr;</span></a>'+(WEB[key]?'<a class="plink pweb" href="'+WEB[key]+'" target="_blank" rel="nofollow noopener">Website <span class="a">&#8599;</span></a>':'')+'</div>';
+    pop.innerHTML='<div class="ph"><span>'+c.dataset.name+'</span>'+tier+'</div>'+revLine(key,'prev')+bio+'<div class="pfacts">'+facts+'</div><div class="plinks"><a class="plink" href="'+c.getAttribute('href')+'">View full profile <span class="a">&rarr;</span></a>'+(WEB[key]?'<a class="plink pweb" href="'+WEB[key]+'" target="_blank" rel="nofollow noopener" data-cursor="Let&#39;s go">Website <span class="a">&#8599;</span></a>':'')+'</div>';
     c.appendChild(pop);
     if(!touch){c.addEventListener('mouseenter',function(){
       pop.classList.remove('fy');
