@@ -63,7 +63,7 @@ footer{padding:50px 0;border-top:1px solid var(--line);font-size:13px;color:var(
 @media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:440px){.grid{grid-template-columns:1fr}}
-</style></head><body>
+</style><style>.hero .herogrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}@media(max-width:860px){.hero .herogrid{grid-template-columns:1fr;gap:24px}}.hero .herotext h1{max-width:16ch}.hero .heroart{line-height:0}.hero .heroart img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;object-position:center}@media(max-width:860px){.hero .heroart img{max-height:230px}}</style></head><body>
 <header><div class="wrap"><a class="wm" href="index.html"><img class="wmi" src="assets/icons/packaging-designer-finder/packaging-designer-finder-logo.svg" alt=""><span class="wmt">Packaging Designer<span class="d"> Finder</span></span></a>
 <button class="navtoggle" aria-label="Open menu" aria-expanded="false"><span></span></button><nav class="nav-r" id="navmenu"><a class="m" href="find-a-packaging-designer.html">Find a Designer</a><a class="m" href="packaging-manufacturers-australia.html">Manufacturers</a><a class="m" href="guides.html">Resources</a><a class="m" href="packaging-formats-substrates.html">Formats</a><a class="m" href="insights.html">Insights</a><a class="m" href="request-a-review.html">The Review</a><a class="cta" href="request-a-review.html">Request a Review</a></nav></div></header><style>
 .subnav{position:fixed;left:0;right:0;top:74px;z-index:25;background:var(--paper);border-bottom:1px solid var(--line);transform:translateY(-170%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 10px 22px -16px rgba(20,20,15,.4)}
@@ -86,12 +86,12 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 
 <div class="wrap"><div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="packaging-manufacturers-australia.html">Packaging manufacturers</a> &nbsp;/&nbsp; Packaging manufacturers</div></div>
 
-<section class="hero"><div class="wrap">
+<section class="hero"><div class="wrap"><div class="herogrid"><div class="herotext">
 <div class="label">Packaging manufacturers</div>
 <h1>Packaging manufacturers &amp; printers in <span class='it'>Australia.</span></h1>
 <p class="stand">Once your pack is designed, you need someone to make it. Browse Australian printers, manufacturers and co-packers by packaging type.</p>
-<div class="acts"><a class="primary" href="packaging-manufacturers-australia.html">All manufacturers</a><a class="lnk" href="find-a-packaging-designer.html">Find a designer <span class="a">&#8594;</span></a></div>
-</div></section>
+<div class="acts"><a class="primary" href="find-a-packaging-designer.html">Find a designer</a><a class="lnk" href="request-a-review.html">Request a Review <span class="a">&#8594;</span></a></div>
+</div><div class="heroart"><img src="assets/icons/manufacturers/manufacturers-hero.svg" alt="" loading="lazy"></div></div></div></section>
 
 <section style="padding:30px 0 58px"><div class="wrap">
 <h2 style="margin-bottom:20px">Find a supplier by <span class="it">type or location.</span></h2>

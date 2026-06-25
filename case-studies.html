@@ -40,7 +40,7 @@ p{margin:0 0 16px;color:var(--ink2)}
 .beat .bh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .beat .bn{font-family:"Bitcount Prop Single",var(--display);font-size:16px;color:var(--mut)}
 .beat:hover .bn{color:var(--accent)}
-.beat .bi{width:30px;height:30px;color:var(--accent)}.beat .bi svg{width:100%;height:100%;display:block}
+.beat .bi{width:40px;height:40px;color:var(--accent)}.bi img{width:100%;height:100%;object-fit:contain;display:block}.beat .bi svg{width:100%;height:100%;display:block}
 .beat h3{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 6px;letter-spacing:-.01em}
 .beat p{font-size:14.5px;margin:0}
 /* feature before/after */
@@ -94,12 +94,12 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 <h2>How we tell a <span class="it">case study.</span></h2>
 <p class="narrow" style="margin:0">Every study follows the same six beats, so you can compare thinking, not storytelling.</p>
 <div class="beats" id="beats">
-  <div class="beat"><div class="bh"><span class="bi"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="17" r="9"/><path d="M24 24l8 8"/></svg></span><span class="bn">01</span></div><h3>The problem</h3><p>The commercial situation and the brief. What the business needed the pack to do.</p></div>
-  <div class="beat"><div class="bh"><span class="bi"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="8" width="18" height="26" rx="3"/><path d="M16 8V6h8v2"/><path d="M15 18h10M15 24h7"/></svg></span><span class="bn">02</span></div><h3>The diagnosis</h3><p>What was actually holding the pack back on shelf, in plain terms.</p></div>
-  <div class="beat"><div class="bh"><span class="bi"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6a10 10 0 0 1 6 18c-1 1-1.5 2-1.5 3.5h-9c0-1.5-.5-2.5-1.5-3.5A10 10 0 0 1 20 6Z"/><path d="M16 31h8M17.5 35h5"/></svg></span><span class="bn">03</span></div><h3>The thinking</h3><p>The strategy and the single decisive design move everything hinged on.</p></div>
-  <div class="beat"><div class="bh"><span class="bi"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 31l-3 6 6-3 17-17-3-3Z"/><path d="M27 12l3 3"/></svg></span><span class="bn">04</span></div><h3>The design</h3><p>What changed, across the range, and why each choice earned its place.</p></div>
-  <div class="beat"><div class="bh"><span class="bi"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 31V23M19 31V15M27 31V19M35 31V11"/><path d="M8 35h29"/></svg></span><span class="bn">05</span></div><h3>The outcome</h3><p>The commercial result, measured against where the product started.</p></div>
-  <div class="beat"><div class="bh"><span class="bi"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20s5-9 14-9 14 9 14 9-5 9-14 9S6 20 6 20Z"/><circle cx="20" cy="20" r="4"/></svg></span><span class="bn">06</span></div><h3>The proof</h3><p>Before and after, in context, so the change is visible not just claimed.</p></div>
+  <div class="beat"><div class="bh"><span class="bi"><img src="assets/icons/case-studies/the-problem.svg" alt="" loading="lazy"></span><span class="bn">01</span></div><h3>The problem</h3><p>The commercial situation and the brief. What the business needed the pack to do.</p></div>
+  <div class="beat"><div class="bh"><span class="bi"><img src="assets/icons/case-studies/the-diagnosis.svg" alt="" loading="lazy"></span><span class="bn">02</span></div><h3>The diagnosis</h3><p>What was actually holding the pack back on shelf, in plain terms.</p></div>
+  <div class="beat"><div class="bh"><span class="bi"><img src="assets/icons/case-studies/the-thinking.svg" alt="" loading="lazy"></span><span class="bn">03</span></div><h3>The thinking</h3><p>The strategy and the single decisive design move everything hinged on.</p></div>
+  <div class="beat"><div class="bh"><span class="bi"><img src="assets/icons/case-studies/the-design.svg" alt="" loading="lazy"></span><span class="bn">04</span></div><h3>The design</h3><p>What changed, across the range, and why each choice earned its place.</p></div>
+  <div class="beat"><div class="bh"><span class="bi"><img src="assets/icons/case-studies/the-outcome.svg" alt="" loading="lazy"></span><span class="bn">05</span></div><h3>The outcome</h3><p>The commercial result, measured against where the product started.</p></div>
+  <div class="beat"><div class="bh"><span class="bi"><img src="assets/icons/case-studies/the-proof.svg" alt="" loading="lazy"></span><span class="bn">06</span></div><h3>The proof</h3><p>Before and after, in context, so the change is visible not just claimed.</p></div>
 </div>
 </div></section>
 
@@ -109,17 +109,7 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 <p class="narrow" style="margin:0">Here is the shape every case study will take: a clear before, a decisive design move, and a measurable after.</p>
 <div class="feat">
   <div class="fart"><div class="ill" style="width:100%;max-width:420px">
-    <svg viewBox="0 0 400 250" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M30 214H370"/>
-      <path d="M64 214V128q0-8 8-8h52q8 0 8 8v86"/>
-      <path d="M64 142H132"/>
-      <text x="98" y="186" font-family="Sen,sans-serif" font-size="11" fill="currentColor" stroke="none" text-anchor="middle" letter-spacing="1">BEFORE</text>
-      <path d="M176 150h70"/><path d="M234 138 246 150 234 162"/>
-      <path d="M280 214V96q0-8 8-8h56q8 0 8 8v118"/>
-      <path d="M280 112H352"/>
-      <path d="M314 150l4.5 9 10 1.5-7.5 7 2 10-9-5-9 5 2-10-7.5-7 10-1.5Z"/>
-      <text x="316" y="196" font-family="Sen,sans-serif" font-size="11" fill="currentColor" stroke="none" text-anchor="middle" letter-spacing="1">AFTER</text>
-    </svg>
+    <img src="assets/icons/case-studies/first-study.svg" alt="The shape of a case study: before and after" style="width:100%;height:auto;display:block">
   </div></div>
   <div class="ftxt">
     <span class="soon"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg> First case study in preparation</span>
