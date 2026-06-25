@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268 64" width="268" height="64" role="img" aria-label="Listed on PackagingDesigner.com.au">
+  <rect x="1" y="1" width="266" height="62" rx="11" fill="#16160f" stroke="#16160f" stroke-width="1.5"/>
+  <g>
+    <ellipse cx="30" cy="32" rx="7.4" ry="10" fill="#fff" stroke="#5b86ff" stroke-width="1.6"/>
+    <circle cx="31.6" cy="34" r="3.4" fill="#5b86ff"/>
+    <ellipse cx="48" cy="32" rx="7.4" ry="10" fill="#fff" stroke="#5b86ff" stroke-width="1.6"/>
+    <circle cx="49.6" cy="34" r="3.4" fill="#5b86ff"/>
+  </g>
+  <text x="70" y="24" font-family="Sen, Arial, sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.2" fill="#a8a596">LISTED IN THE</text>
+  <text x="70" y="42" font-family="Sen, Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Packaging Designer Finder</text>
+  <text x="70" y="55" font-family="Sen, Arial, sans-serif" font-size="9" font-weight="600" fill="#5b86ff">packagingdesigner.com.au</text>
+</svg>
