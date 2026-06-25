@@ -1,0 +1,15 @@
+/* PackagingDesigner.com.au — site motion bundle (cursor, eyes, magnetic, reveals, progress) */
+.cur-eye{position:fixed;top:0;left:0;width:30px;height:40px;margin:-20px 0 0 -15px;pointer-events:none;z-index:9999;display:none;transition:transform .16s ease}
+.cur-eye svg{display:block;width:100%;height:100%;overflow:visible}
+.cur-eye.lg{transform:scale(1.4)}
+.cur-pill{position:fixed;top:0;left:0;transform:translate(-50%,-50%);background:var(--accent,#2c45c9);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;padding:8px 15px;border-radius:99px;white-space:nowrap;pointer-events:none;z-index:9999;display:none}
+html.customcursor,html.customcursor *{cursor:none!important}
+html.customcursor input,html.customcursor textarea,html.customcursor select,html.customcursor [contenteditable]{cursor:auto!important}
+.magnetic{transition:transform .25s cubic-bezier(.2,.7,.2,1);will-change:transform}
+#mprog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent,#2c45c9);z-index:9998;transition:width .12s linear}
+.welive{display:inline-block;line-height:0}
+.welive svg{vertical-align:middle}
+html.motion .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+html.motion .reveal.in{opacity:1;transform:none}
+@media(hover:none),(pointer:coarse){.cur-eye,.cur-pill{display:none!important}}
+@media(prefers-reduced-motion:reduce){html.motion .reveal{opacity:1!important;transform:none!important;transition:none}.magnetic{transition:none}#mprog{display:none}}
