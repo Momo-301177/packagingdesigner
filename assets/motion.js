@@ -133,3 +133,28 @@
   }
   requestAnimationFrame(frame);
 })();
+
+/* Back-to-top button — self-injects only on pages without an inline #toTop */
+(function(){
+  if (document.getElementById('toTop')) return;          // page already has one
+  function init(){
+    if (document.getElementById('toTop')) return;
+    var css = '#toTop{position:fixed;right:24px;bottom:24px;z-index:60;width:48px;height:48px;border-radius:50%;border:0;background:var(--accent,#2c45c9);color:#fff;cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;box-shadow:0 10px 26px -8px rgba(20,20,15,.45)}'
+      + '#toTop.show{opacity:1;visibility:visible;transform:none}'
+      + '#toTop:hover{background:#16160f}#toTop svg{width:20px;height:20px}'
+      + '@media(max-width:680px){#toTop{right:16px;bottom:16px}}'
+      + '@media print{#toTop{display:none}}';
+    var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
+    var b = document.createElement('button');
+    b.id = 'toTop'; b.setAttribute('aria-label','Back to top');
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+    b.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+    document.body.appendChild(b);
+    var tick = false;
+    function on(){ b.classList.toggle('show', (window.pageYOffset||0) > 500); tick = false; }
+    window.addEventListener('scroll', function(){ if(!tick){ tick = true; requestAnimationFrame(on); } }, {passive:true});
+    on();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
