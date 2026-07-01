@@ -50,7 +50,8 @@ footer{padding:50px 0;border-top:1px solid var(--line);font-size:13px;color:var(
 @media(max-width:760px){.fcards{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.fcards{grid-template-columns:1fr}}
 .fcard{border:1px solid var(--line);background:var(--bone);border-radius:10px;padding:22px;transition:.2s}
-.fcard:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 16px 34px -22px rgba(44,69,201,.5)}
+.fcard:hover{border-color:var(--accent);background:rgba(44,69,201,.05)}
+.fcard:hover .nm2{color:var(--accent)}
 .fcard .fh{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .fcard .ic2{width:72px;height:72px;flex:none}.fcard .ic2 img{width:100%;height:100%;object-fit:contain;object-position:center center}
 .fcard .nm2{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.01em;line-height:1.1}
@@ -220,5 +221,5 @@ footer .fcols a{display:block;font-size:14px;color:var(--ink2);padding:5px 0}
 footer .fcols .h{font-family:var(--display);font-weight:600;color:var(--ink);margin-bottom:8px}
 @media(max-width:680px){footer .fcols{display:grid;grid-template-columns:1fr 1fr;gap:30px 20px}}
 </style>
-<script src="/assets/motion.js?v=8"></script>
+<script src="/assets/motion.js?v=9"></script>
 </body></html>

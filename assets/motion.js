@@ -158,3 +158,20 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* Q&A (details/summary) blue hover highlight — injected once, applies site-wide */
+(function(){
+  if (document.getElementById('faqHover')) return;
+  function add(){
+    if (document.getElementById('faqHover')) return;
+    var css =
+      'summary{transition:color .15s ease, background-color .15s ease, padding-left .15s ease}'
+    + 'summary:hover{color:var(--accent,#2c45c9);background-color:rgba(44,69,201,.06);'
+    +   'padding-left:14px;margin-left:-14px;border-radius:6px}'
+    + 'summary:hover::after{color:var(--accent,#2c45c9)}';
+    var st=document.createElement('style'); st.id='faqHover'; st.textContent=css;
+    document.head.appendChild(st);
+  }
+  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded',add);
+  else add();
+})();
