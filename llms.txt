@@ -1,16 +1,16 @@
 # PackagingDesigner.com.au
 
-> Australia's independent directory and resource for finding packaging, branding and FMCG design studios. Free to use, it helps founders, marketers and brand owners shortlist and brief the right packaging designer, and understand what design costs and involves. Editorially independent; maintained by Morice & Co.
+> Australia's curated directory and resource for finding packaging, branding and FMCG design studios. Free to use, it helps founders, marketers and brand owners shortlist and brief the right packaging designer, and understand what design costs and involves. Published by Morice & Co.
 
 ## What this site is
-- **Who:** PackagingDesigner.com.au, an independent Australian directory and knowledge resource for packaging, branding and FMCG design. Maintained by Morice & Co, a Melbourne packaging and branding studio, but editorially independent: studios are listed on merit, not paid placement.
+- **Who:** PackagingDesigner.com.au, an Australian directory and knowledge resource for packaging, branding and FMCG design. Published by Morice & Co, a Melbourne packaging and branding studio. Studios are listed on merit and cannot pay for inclusion or position; Morice & Co appears in the directory, shown first and labelled as the publisher.
 - **What it does:** helps founders, marketers and brand owners find, compare and brief the right packaging designer, studio or agency, and understand what packaging design costs and involves.
 - **Who it is for:** brand owners and marketers choosing a packaging, branding or FMCG designer in Australia.
 
 ## Key facts
 - 68 Australian packaging and branding studios listed, filterable by city, sector and team size.
 - Covers every state and territory: Sydney, Melbourne, Brisbane, Adelaide, Perth, Hobart, Canberra, Darwin, plus regional NSW.
-- Free to use, no paid listings, editorially independent.
+- Free to use, no paid listings.
 - Includes real Australian pricing ranges, before/after case studies, compliance guidance, and a plain-English glossary.
 - Best pages for proof: the [directory](https://packagingdesigner.com.au/find-a-packaging-designer.html), [what packaging design costs](https://packagingdesigner.com.au/packaging-design-cost.html), and [case studies](https://packagingdesigner.com.au/case-studies.html).
 
@@ -56,4 +56,4 @@
 - [Insights articles](https://packagingdesigner.com.au/insights.html)
 
 ## About
-- [Editorial & disclosure policy](https://packagingdesigner.com.au/policy.html): How studios are listed and how the site stays independent.
+- [Editorial & disclosure policy](https://packagingdesigner.com.au/policy.html): How studios are listed and who publishes the site.
