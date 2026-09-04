@@ -321,7 +321,7 @@ footer{padding:60px 0;border-top:1px solid var(--line);font-size:13px;color:var(
         <div class="toggle" id="cface" style="margin-bottom:22px"><button data-f="front" class="on">Front of pack</button><button data-f="back">Back of pack</button></div>
         <div class="ci" id="cci">Tap a point on the pack</div>
         <h3 id="cph">We read top to bottom</h3>
-        <p id="cpp">Logos sit high, the product name follows, then claims and detail cascade down in order of importance. Tap each point to see what goes where.</p>
+        <p id="cpp">Logos sit high, the product name follows, then claims and detail cascade down in order of importance. Tap each point to see what goes where.</p><a id="cpl" href="#" style="display:none;margin-top:16px;font-size:15px;font-weight:600;color:var(--accent)">Learn more &#8594;</a>
         <div class="chips" id="chips"></div>
         <p class="cnote">This is the most functional, consumer-friendly hierarchy, not a hard rule. The strongest brands know exactly when to break it.</p>
       </div>
@@ -371,21 +371,21 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
 /* ---- packaging canvas hotspots ---- */
 const CAN_FRONT=[
-  {n:'Your logo, up top',c:'Logo',t:'We read top to bottom. The brand mark sits high so it is the first thing seen and recognised from a distance.'},
-  {n:'The product name',c:'Name',t:'What it is and who it is for, second in the hierarchy, directly after the logo.'},
-  {n:'The hero claim',c:'Claim',t:'One benefit earns the spotlight. Crammed claims compete and cancel each other out.'},
-  {n:'Ingredients & detail',c:'Detail',t:'Supporting information designed to be found when wanted, without competing with the front of pack.'},
-  {n:'Quantity & compliance',c:'Quantity',t:'Net weight or volume and mandatory information, placed low and designed in from the start, never bolted on.'}
+  {n:'Your logo, up top',c:'Logo',l:'guides.html',t:'We read top to bottom. The brand mark sits high so it is the first thing seen and recognised from a distance.'},
+  {n:'The product name',c:'Name',l:'guides.html',t:'What it is and who it is for, second in the hierarchy, directly after the logo.'},
+  {n:'The hero claim',c:'Claim',l:'compliance-checker.html',t:'One benefit earns the spotlight. Crammed claims compete and cancel each other out.'},
+  {n:'Ingredients & detail',c:'Detail',l:'guides.html',t:'Supporting information designed to be found when wanted, without competing with the front of pack.'},
+  {n:'Quantity & compliance',c:'Quantity',l:'compliance-checker.html',t:'Net weight or volume and mandatory information, placed low and designed in from the start, never bolted on.'}
 ];
 const CAN_BACK=[
-  {n:'The brand story',c:'Story',t:'A short, human reason to believe. The back is where a shopper who has already picked it up decides to buy.'},
-  {n:'How to use',c:'Directions',t:'Clear directions or a serving suggestion, so the product delivers on its promise at home.'},
-  {n:'Ingredients list',c:'Ingredients',t:'The full ingredient or material declaration, ordered and formatted exactly as the category requires.'},
-  {n:'Warnings & allergens',c:'Warnings',t:'Allergens, cautions and storage. Legally required, and designed to stay legible, never buried.'},
-  {n:'Made in Australia',c:'Made in AU',t:'Country of origin: the kangaroo standard mark or Australian Made logo, with the right claim for where it is made and sourced.'},
-  {n:'Recycling label',c:'Recycling',t:'The Australasian Recycling Label tells shoppers how to dispose of each part. It needs a PREP assessment before it goes on pack.'},
-  {n:'Best before / use by',c:'Best before',t:'Date marking and batch code, placed where they are easy to find and print reliably on the line.'},
-  {n:'Barcode',c:'Barcode',t:'Sized and placed to scan first time, with the quiet zone protected so checkout never fails.'}
+  {n:'The brand story',c:'Story',l:'guides.html',t:'A short, human reason to believe. The back is where a shopper who has already picked it up decides to buy.'},
+  {n:'How to use',c:'Directions',l:'compliance-checker.html',t:'Clear directions or a serving suggestion, so the product delivers on its promise at home.'},
+  {n:'Ingredients list',c:'Ingredients',l:'compliance-checker.html',t:'The full ingredient or material declaration, ordered and formatted exactly as the category requires.'},
+  {n:'Warnings & allergens',c:'Warnings',l:'compliance-checker.html',t:'Allergens, cautions and storage. Legally required, and designed to stay legible, never buried.'},
+  {n:'Made in Australia',c:'Made in AU',l:'packaging-marks-symbols.html#made',t:'Country of origin: the kangaroo standard mark or Australian Made logo, with the right claim for where it is made and sourced.'},
+  {n:'Recycling label',c:'Recycling',l:'packaging-marks-symbols.html#recycling',t:'The Australasian Recycling Label tells shoppers how to dispose of each part. It needs a PREP assessment before it goes on pack.'},
+  {n:'Best before / use by',c:'Best before',l:'compliance-checker.html',t:'Date marking and batch code, placed where they are easy to find and print reliably on the line.'},
+  {n:'Barcode',c:'Barcode',l:'packaging-marks-symbols.html#barcodes',t:'Sized and placed to scan first time, with the quiet zone protected so checkout never fails.'}
 ];
 const TIPS_FRONT=['Your logo','Your product name','Your hero claim','Ingredients & detail','Quantity / weight'];
 const TIPS_BACK=['Brand story','How to use','Ingredients list','Warnings & allergens','Made in Australia','Recycling label','Best before','Barcode'];
@@ -400,6 +400,7 @@ function setCanvas(i){
   document.getElementById('cci').textContent='0'+(i+1)+' / 0'+CAN.length;
   document.getElementById('cph').textContent=CAN[i].n;
   document.getElementById('cpp').textContent=CAN[i].t;
+  var _cl=document.getElementById('cpl');if(_cl){if(CAN[i]&&CAN[i].l){_cl.href=CAN[i].l;_cl.style.display='inline-block';}else{_cl.style.display='none';}}
 }
 renderChips();
 document.querySelectorAll('.hot').forEach(h=>h.addEventListener('click',()=>setCanvas(+h.dataset.i)));
@@ -508,6 +509,7 @@ function setFace(face){CAN = face==='front'?CAN_FRONT:CAN_BACK;
   document.getElementById('cci').textContent=DEF[face].ci;
   document.getElementById('cph').textContent=DEF[face].h3;
   document.getElementById('cpp').textContent=DEF[face].t;
+  var _cl2=document.getElementById('cpl');if(_cl2)_cl2.style.display='none';
   document.querySelectorAll('#cface button').forEach(x=>x.classList.toggle('on',x.dataset.f===face));
 }
 if(cmv){
