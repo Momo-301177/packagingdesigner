@@ -123,9 +123,9 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 <h2>Estimate your <span class="it">budget.</span></h2>
 <p class="narrow" style="margin:0">Typical market ranges by scope, then set your project for an indicative number. A planning guide, not a quote.</p>
 <div class="ranges">
-  <div class="rg"><div class="rn">Single label refresh</div><div class="rd">One SKU, existing brand</div><div class="rp">$3k&ndash;$8k</div></div>
-  <div class="rg"><div class="rn">New product: brand + pack</div><div class="rd">First launch, one hero product</div><div class="rp">$8k&ndash;$18k</div></div>
-  <div class="rg"><div class="rn">Brand + range system</div><div class="rd">A full range built to scale</div><div class="rp">$18k&ndash;$40k+</div></div>
+  <div class="rg"><div class="rn">Single label refresh</div><div class="rd">One SKU, existing brand</div><div class="rp">$1.5k&ndash;$3k</div></div>
+  <div class="rg"><div class="rn">New product: brand + pack</div><div class="rd">First launch, one hero product</div><div class="rp">$3k&ndash;$6k</div></div>
+  <div class="rg"><div class="rn">Brand + range system</div><div class="rd">A full range built to scale</div><div class="rp">$8k&ndash;$18k</div></div>
   <div class="rg"><div class="rn">Structural / custom</div><div class="rd">Bespoke pack engineering, added</div><div class="rp">+$5k&ndash;$20k+</div></div>
 </div>
 <div class="est">
@@ -138,9 +138,9 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
     <div class="field"><label>Number of SKUs</label><input id="e_sku" type="number" min="1" max="50" value="1" oninput="calc()"></div>
     <div class="field"><label>Studio tier</label><div class="sel"><select id="e_tier" oninput="calc()">
       <option value="1" selected>Boutique studio (1&ndash;5)</option>
-      <option value="1.4">Medium studio (5&ndash;10)</option>
-      <option value="2">Large studio (10&ndash;20)</option>
-      <option value="3">Global agency</option>
+      <option value="2.5">Medium studio (5&ndash;10)</option>
+      <option value="4">Large studio (10&ndash;20)</option>
+      <option value="6">Global agency</option>
     </select></div></div>
     <label class="opt"><input type="checkbox" id="e_strat" oninput="calc()"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L6 11L12 3.5"/></svg></span><span class="tx"><b>Strategy &amp; naming</b>, positioning, naming, brand story</span></label>
     <label class="opt"><input type="checkbox" id="e_struct" oninput="calc()"><span class="bx"><svg viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L6 11L12 3.5"/></svg></span><span class="tx"><b>Custom structure</b>, bespoke pack or format engineering</span></label>
@@ -148,7 +148,7 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
   </div>
   <div class="res">
     <div class="kk">Indicative range</div>
-    <div class="big" id="e_out">$8,000&ndash;$18,000</div>
+    <div class="big" id="e_out">$3,000&ndash;$6,000</div>
     <div class="sub" id="e_line">A new product brand and pack, boutique studio, 1 SKU.</div>
     <ul class="fac" id="e_fac"></ul>
     <div class="dis">Indicative only, based on typical Australian market ranges. Real quotes vary by studio, complexity and timeline. Always brief and get it in writing.</div>
@@ -173,8 +173,8 @@ window.addEventListener('scroll',function(){if(!tick){requestAnimationFrame(on);
 <h2>Five things that move the <span class="it">number.</span></h2>
 <p class="narrow" style="margin:0">Ranked by how much each one tends to swing a budget, with a rough effect to plan against. Guides, not quotes.</p>
 <div class="imp" id="imp">
-  <div class="irow"><div class="il"><b>Scope</b><div class="d">A one-label refresh versus a full brand-and-range system. This sets the budget more than anything else.</div></div><div class="ef"><div class="n">$3k &ndash; $40k+</div><div class="l">The biggest lever</div></div></div>
-  <div class="irow"><div class="il"><b>Studio tier</b><div class="d">The same brief costs least at a boutique and several times more at a global agency.</div></div><div class="ef"><div class="n">about 1&ndash;3&times; fee</div><div class="l">Boutique to global</div></div></div>
+  <div class="irow"><div class="il"><b>Scope</b><div class="d">A one-label refresh versus a full brand-and-range system. This sets the budget more than anything else.</div></div><div class="ef"><div class="n">$1.5k &ndash; $18k+</div><div class="l">The biggest lever</div></div></div>
+  <div class="irow"><div class="il"><b>Studio tier</b><div class="d">The same brief costs least at a boutique and several times more at a global agency.</div></div><div class="ef"><div class="n">about 1&ndash;6&times; fee</div><div class="l">Boutique to global</div></div></div>
   <div class="irow"><div class="il"><b>Strategy &amp; naming</b><div class="d">Positioning, brand architecture and naming add work up front, and usually pay for themselves on shelf.</div></div><div class="ef"><div class="n">+ an up-front phase</div><div class="l">Often worth it</div></div></div>
   <div class="irow"><div class="il"><b>Structure</b><div class="d">Designing to a stock format adds nothing; custom pack engineering and tooling are charged on top.</div></div><div class="ef"><div class="n">+ $5k &ndash; $20k+</div><div class="l">If custom-built</div></div></div>
   <div class="irow"><div class="il"><b>Number of SKUs</b><div class="d">The lead product carries the design. Every extra variant adds artwork and rollout.</div></div><div class="ef"><div class="n">+ per variant</div><div class="l">Scales with the range</div></div></div>
@@ -212,7 +212,7 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 ['chart','imp'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
 
 // estimator
-var BANDS={refresh:[3000,8000],new:[8000,18000],range:[18000,40000]};
+var BANDS={refresh:[1500,3000],new:[3000,6000],range:[8000,18000]};
 var SCOPENAME={refresh:'a single label refresh',new:'a new product brand and pack',range:'a brand and range system'};
 function money(n){return '$'+Math.round(n/500)*500;}
 function fmt(n){return '$'+(Math.round(n/500)*500).toLocaleString();}
@@ -231,7 +231,7 @@ function calc(){
   lo=lo*skuMult*stratMult*regMult*tier;
   hi=hi*skuMult*stratMult*regMult*tier;
   document.getElementById('e_out').textContent=fmt(lo)+'–'+fmt(hi);
-  var tierName={'1':'boutique studio','1.4':'medium studio','2':'large studio','3':'global agency'}[document.getElementById('e_tier').value];
+  var tierName={'1':'boutique studio','2.5':'medium studio','4':'large studio','6':'global agency'}[document.getElementById('e_tier').value];
   document.getElementById('e_line').textContent=cap(SCOPENAME[scope])+', '+tierName+', '+sku+(sku>1?' SKUs':' SKU')+'.';
   var f=[];
   f.push(['Base scope',fmt(BANDS[scope][0])+'–'+fmt(BANDS[scope][1])]);
